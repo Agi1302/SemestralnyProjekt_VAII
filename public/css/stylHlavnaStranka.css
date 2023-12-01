@@ -1,0 +1,154 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+#mainNavigation a {
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4)
+}
+
+.dropdown-menu {
+    background: #03727d
+}
+
+a.dropdown-toggle {
+    color: #dfdfdf !important
+}
+
+a.dropdown-item:hover {
+    color: #03727d !important
+}
+
+.nav-item a {
+    color: #dfdfdf;
+}
+
+.nav-item a:hover {
+    color: #fff
+}
+
+.nav-item {
+    min-width: 12vw;
+
+}
+
+#mainNavigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 123;
+    padding-bottom: 120px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0); /* IE6-9 */
+}
+
+#navbarNavDropdown.collapsing .navbar-nav,
+#navbarNavDropdown.show .navbar-nav {
+    background: #037582;
+    padding: 12px;
+}
+
+body {
+    background-image: url("/Obrazky/Pozadie2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    height: 100vh;
+}
+
+.obrazokLoga {
+    width: 100px;
+}
+
+.filtrovanie {
+
+    padding-top: 23rem;
+}
+
+.filtre {
+    background-color: #214957;
+    color: white;
+}
+
+.aplikovatTlac {
+    width: 100%;
+    background-color: #214957;
+    color: white;
+    border-width: 1px;
+    border-color: white;
+}
+
+.aplikovatTlac:hover {
+    background-color: white;
+    color: #214957;
+}
+
+.aplikovatTlac:after {
+    background-color: #214957;
+    color: white;
+}
+
+.aplikovatTlac:active {
+    background-color: #214957;
+    color: white;
+}
+
+.karticka {
+    background-color: rgba(0, 0, 0, 0.37);
+
+    border-radius: 10px;
+    padding: 20px; /* vnútorný okraj */
+    margin: 0 0 20px 0; /* vonkajší okraj */
+
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.karticka img {
+    border-radius: 10px; /* zakrivené rohy pre obrázok */
+    margin-bottom: 15px; /* priestor medzi obrázkom a textom */
+    flex-shrink: 0; /* zabraňuje zmenšeniu obrázka */
+}
+
+.karticka {
+
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kartickaNadpisy {
+    font-size: 2rem;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-menuHlavnaStranka {
+    background-color: #0e2d3a;
+}
+
+option {
+    display: block;
+    width: 50px !important;
+
+}
+

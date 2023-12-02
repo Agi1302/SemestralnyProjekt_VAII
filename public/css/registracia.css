@@ -126,11 +126,30 @@ body {
     background-color: rgba(33, 73, 87, 0.55);
     border-color: black;
     border-width: 2px;
-    font-size: 10px;
+    font-size: 15px;
+    margin-top: 15px;
+    width: 160px;
+}
+
+
+.buttonRegistracia {
+    background-color: rgba(33, 73, 87, 0.55);
+    border-color: black;
+    border-width: 2px;
+    width: 160px;
+    font-size: 15px;
+    margin-top: 14px;
+    margin-left: 12px;
 }
 
 
 .buttonPotvrdenie:hover {
+    background-color: rgba(255, 255, 255, 0.56);
+    color: #214957;
+    border-color: #214957;
+}
+
+.buttonRegistracia:hover {
     background-color: rgba(255, 255, 255, 0.56);
     color: #214957;
     border-color: #214957;

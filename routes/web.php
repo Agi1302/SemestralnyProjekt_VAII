@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ControllerPrihlasenie;
+use App\Http\Controllers\controllerRegistracia;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,9 @@ Route::get('/registracia', function () {
 Route::get('/vodopady', function () {
     return view('viewVodopady');
 });
+
+
+
+Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
+Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
+Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);

@@ -4,6 +4,18 @@
     <link rel="stylesheet" href="{{ asset('css/stylHlavnaStranka.css') }}">
 
 
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
+
+    @if(session('uspesnePrihlasenie'))
+        <div class="alert alert-success">
+            {{ session('uspesnePrihlasenie') }}
+        </div>
+    @endif
+
 
     <div class="container  filtrovanie">
 
@@ -14,8 +26,8 @@
             <select class="form-select filtre" id="tourType">
                 <option selected>TYP TÚRY</option>
                 <option value="1">Horská túra</option>
-                <option value="2">Bicyklová túra</option>
-                <option value="4">Kultúrna túra</option>
+                <option value="2">Kultúrna túra</option>
+                <option value="3">Oddychová túra</option>
             </select>
         </div>
 
@@ -35,7 +47,7 @@
                 <option value="1">Jar</option>
                 <option value="2">Leto</option>
                 <option value="3">Jeseň</option>
-                <option value="3">Zima</option>
+                <option value="4">Zima</option>
             </select>
         </div>
 

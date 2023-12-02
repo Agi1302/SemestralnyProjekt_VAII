@@ -54,9 +54,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Chaty</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fórum</a>
-                </li>
+
+
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink2" role="button"
@@ -64,12 +63,42 @@
                         Všeobecné
                     </a>
                     <ul class="dropdown-menu dropdown-menuHlavnaStranka" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Prihlásenie</a></li>
-                        <li><a class="dropdown-item" href="/registracia">Registrácia</a></li>
+
                         <li><a class="dropdown-item" href="#">Užitočné odkazy</a></li>
+                        <li><a class="dropdown-item" href="#">Fórum</a></li>
                         <li><a class="dropdown-item" href="#">Q&A</a></li>
                     </ul>
                 </li>
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="/prihlasenie">Prihlásenie</a>
+                </li>
+                @endguest
+
+                @auth
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="/profil" id="navbarDropdownMenuLink2" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Môj profil
+                        </a>
+                        <ul class="dropdown-menu dropdown-menuHlavnaStranka" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Zobraziť informácie</a></li>
+                            <li><a class="dropdown-item" href="/odhlasenie">Odhlásenie</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link" href="/profil">Môj profil</a>--}}
+{{--                    </li>--}}
+                @endauth
+
+
+
+
+
             </ul>
         </div>
     </div>

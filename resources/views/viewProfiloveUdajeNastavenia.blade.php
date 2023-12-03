@@ -11,10 +11,9 @@
 <div class="container">
     <div class="row">
         <!-- Navigačný panel -->
-        <div class="col-lg-4 stlpecSTextom">
+        <div class="col-lg-2 stlpecSTextom">
             <div>
-                <div class="p-3 text-white navigacnyPanelInfo" style="position: sticky; top: 180px; height: 50vh; width: 30vh; overflow-y: auto;">
-
+                <div class="p-3 text-white navigacnyPanelInfo2" style="position: sticky; top: 180px; height: 50vh; width: 30vh; overflow-y: auto;">
                     <h3 class="mb-3 nadpisMojUcet">Môj účet</h3>
 
                     <!-- Položky menu -->
@@ -45,7 +44,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="zmenaHesla" class="nav-link text-white">
+                            <a href="/zmenaHesla" class="nav-link text-white">
                                 <i class="bi bi-key-fill"></i> Zmena hesla
                             </a>
                         </li>
@@ -60,21 +59,37 @@
         </div>
 
         <!-- Formulár -->
-        <div class="col-lg-8 pravyStlpecImg">
+        <div class="col-lg-10 pravyStlpecImg">
             <form class="formOpravnyFormular">
                 <div class="form-group">
                     <label for="firstName">Meno:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Zadajte meno">
+                    <input type="text" class="form-control" id="firstName" placeholder={{ Auth::user()->meno }}>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Priezvisko:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Zadajte priezvisko">
+                    <input type="text" class="form-control" id="lastName" placeholder={{ Auth::user()->priezvisko }}>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Zadajte email">
+                    <input type="email" class="form-control" id="email" placeholder={{ Auth::user()->email }}>
                 </div>
-                <button type="submit" class="btn btn-primary tlacitkoZmenaHesla">Zmena hesla</button>
+
+
+                <button class="nav-item tlacitkoZmenaHesla">
+                    <a href="#" class="nav-link text-white">
+                        <i></i> Uložiť zmenené údaje
+                    </a>
+                </button>
+
+
+                <button class="nav-item tlacitkoZmenaHesla">
+                    <a href="/zmenaHesla" class="nav-link text-white">
+                        <i class="bi bi-key-fill"></i> Zmena hesla
+                    </a>
+                </button>
+
+{{--                <button href="/zmenaHesla" class="btn btn-primary tlacitkoZmenaHesla">Zmena hesla</button>--}}
+{{--                <button type="submit" class="btn btn-primary tlacitkoZmenaHesla">Zmena hesla</button>--}}
             </form>
         </div>
     </div>

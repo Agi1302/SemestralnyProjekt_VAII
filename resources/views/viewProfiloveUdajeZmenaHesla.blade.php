@@ -11,9 +11,9 @@
 <div class="container">
     <div class="row">
         <!-- Navigačný panel -->
-        <div class="col-lg-4 stlpecSTextom">
+        <div class="col-lg-2 stlpecSTextom">
             <div>
-                <div class="p-3 text-white navigacnyPanelInfo" style="position: sticky; top: 180px; height: 50vh; width: 30vh; overflow-y: auto;">
+                <div class="p-3 text-white navigacnyPanelInfo2" style="position: sticky; top: 180px; height: 50vh; width: 30vh; overflow-y: auto;">
 
                     <h3 class="mb-3 nadpisMojUcet">Môj účet</h3>
 
@@ -60,7 +60,7 @@
         </div>
 
         <!-- Formulár -->
-        <div class="col-lg-8 pravyStlpecImg">
+        <div class="col-lg-10 pravyStlpecImg">
             <form class="formOpravnyFormular">
                 <div class="form-group">
                     <label for="firstName">Zadajte staré heslo:</label>
@@ -74,11 +74,12 @@
                     <label for="email">Potvdenie nového hesla:</label>
                     <input type="email" class="form-control" id="email" placeholder="">
                 </div>
-{{--                <a href="/zmenaHesla" class="nav-link text-white">--}}
-{{--                    <button type="submit" class="btn btn-primary tlacitkoZmenaHesla">Chcem zmeniť heslo</button>--}}
-{{--                </a>--}}
 
-{{--                <a href="/zmenaHesla" class="btn btn-primary tlacitkoZmenaHesla">Chcem zmeniť heslo</a>--}}
+                <button class="nav-item tlacitkoZmenaHesla">
+                    <a href="#" class="nav-link text-white">
+                        <i></i> Potvrdenie zmeny hesla
+                    </a>
+                </button>
 
             </form>
         </div>

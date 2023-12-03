@@ -79,10 +79,15 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle " href="/profil" id="navbarDropdownMenuLink2" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Môj profil
+                            {{Auth::user()->meno}}
                         </a>
                         <ul class="dropdown-menu dropdown-menuHlavnaStranka" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="/zobrazenieProfilovychUdajov">Profilové údaje</a></li>
+
+                            @if(Auth::check() && Auth::user()->meno == 'admin')
+                                <li><a class="dropdown-item" href="/upravenieDatabazy">Uprav databázu</a></li>
+                            @endif
+
                             <li><a class="dropdown-item" href="/odhlasenie">Odhlásenie</a></li>
                         </ul>
                     </li>

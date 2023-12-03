@@ -56,6 +56,11 @@ Route::get('/zmenaHesla', function () {
 });
 
 
+Route::get('/pridavanieZaznamovDoDatabazy', function () {
+    return view('viewUpravenieDatabazy');
+});
+
+
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);

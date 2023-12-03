@@ -59,11 +59,10 @@ a.dropdown-item:hover {
 
 .obrazokLoga {
     width: 100px;
-
 }
 
 body {
-    background-image: url("/Obrazky/Pozadie2.jpg");
+    background-image: url("/Obrazky/PozadieProfil1.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -72,86 +71,17 @@ body {
     height: 100vh;
 }
 
-/*.obrazokLoga {*/
-/*    width: 100px;*/
-/*}*/
-
-.filtrovanie {
-
-    padding-top: 23rem;
+.navigacnyPanelInfo{
+    font-size: 1.2rem;
+    background-color: rgba(33, 73, 87, 0);
+    margin-left: 2rem;
 }
 
-.filtre {
-    background-color: #214957;
-    color: white;
-}
-
-.aplikovatTlac {
-    width: 100%;
-    background-color: #214957;
-    color: white;
-    border-width: 1px;
-    border-color: white;
-}
-
-.aplikovatTlac:hover {
-    background-color: white;
-    color: #214957;
-}
-
-.aplikovatTlac:after {
-    background-color: #214957;
-    color: white;
-}
-
-.aplikovatTlac:active {
-    background-color: #214957;
-    color: white;
-}
-
-.karticka {
-    background-color: rgba(0, 0, 0, 0.37);
-
-    border-radius: 10px;
-    padding: 20px; /* vnútorný okraj */
-    margin: 0 0 20px 0; /* vonkajší okraj */
-
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.nadpisMojUcet{
+    margin-left: 1rem;
+    padding-bottom: 0.9rem;
 
 }
 
-.karticka img {
-    border-radius: 10px; /* zakrivené rohy pre obrázok */
-    margin-bottom: 15px; /* priestor medzi obrázkom a textom */
-    flex-shrink: 0; /* zabraňuje zmenšeniu obrázka */
-}
 
-.karticka {
-
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.kartickaNadpisy {
-    font-size: 2rem;
-}
-
-.dropdown-item {
-    color: white;
-}
-
-.dropdown-menuHlavnaStranka {
-    background-color: #0e2d3a;
-}
-
-option {
-    display: block;
-    width: 50px !important;
-
-}
 

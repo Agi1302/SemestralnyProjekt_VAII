@@ -42,6 +42,15 @@ Route::get('/vodopady', function () {
     return view('viewVodopady');
 });
 
+Route::get('/zobrazenieProfilovychUdajov', function () {
+    return view('viewProfiloveUdaje');
+});
+
+
+Route::get('/zmenaNastaveni', function () {
+    return view('viewProfiloveUdajeNastavenia');
+});
+
 
 
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);

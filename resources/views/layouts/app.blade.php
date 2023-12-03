@@ -9,7 +9,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="{{ asset('css/stylHlavnaStranka.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('css/stylHlavnaStranka.css') }}">--}}
     <title>Zamiluj si turistiku</title>
 </head>
 <body>
@@ -82,7 +82,7 @@
                             Môj profil
                         </a>
                         <ul class="dropdown-menu dropdown-menuHlavnaStranka" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Zobraziť informácie</a></li>
+                            <li><a class="dropdown-item" href="/zobrazenieProfilovychUdajov">Profilové údaje</a></li>
                             <li><a class="dropdown-item" href="/odhlasenie">Odhlásenie</a></li>
                         </ul>
                     </li>

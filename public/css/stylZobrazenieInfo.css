@@ -74,7 +74,8 @@ body {
 .navigacnyPanelInfo{
     font-size: 1.2rem;
     background-color: rgba(33, 73, 87, 0);
-    margin-left: 2rem;
+    margin-top: 15rem;
+    margin-left: -8rem;
 }
 
 .nadpisMojUcet{
@@ -83,5 +84,36 @@ body {
 
 }
 
+/*body{*/
+/*    background:black;*/
+/*}*/
 
+.formOpravnyFormular{
+    width: 50rem;
+    margin-top: 20rem;
+    position: relative;
+    top: -20px;
+    background-color: rgba(33, 73, 87, 0.47);
+    padding: 2rem;
+    border-radius: 3rem;
+    margin-left: -10rem;
+}
+
+
+
+.tlacitkoZmenaHesla:hover {
+    background-color: rgba(255, 255, 255, 0.56);
+    color: #214957;
+    border-color: #214957;
+}
+
+.tlacitkoZmenaHesla {
+    background-color: rgba(33, 73, 87, 0.55);
+    border-color: black;
+    border-width: 2px;
+    width: 160px;
+    font-size: 15px;
+    margin-top: 14px;
+    margin-left: 3px;
+}
 

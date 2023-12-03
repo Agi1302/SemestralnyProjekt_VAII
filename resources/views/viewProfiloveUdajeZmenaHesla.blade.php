@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <link rel="stylesheet" href="{{ asset('css/stylZobrazenieInfo.css') }}">
+<link rel="stylesheet" href="{{ asset('css/stylZobrazenieInfo.css') }}">
 
 @endsection
 
@@ -45,7 +45,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="zmenaHesla" class="nav-link text-white">
+                            <a href="#" class="nav-link text-white">
                                 <i class="bi bi-key-fill"></i> Zmena hesla
                             </a>
                         </li>
@@ -63,18 +63,23 @@
         <div class="col-lg-8 pravyStlpecImg">
             <form class="formOpravnyFormular">
                 <div class="form-group">
-                    <label for="firstName">Meno:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Zadajte meno">
+                    <label for="firstName">Zadajte staré heslo:</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Priezvisko:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Zadajte priezvisko">
+                    <label for="lastName">Zadajte nové heslo:</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Zadajte email">
+                    <label for="email">Potvdenie nového hesla:</label>
+                    <input type="email" class="form-control" id="email" placeholder="">
                 </div>
-                <button type="submit" class="btn btn-primary tlacitkoZmenaHesla">Zmena hesla</button>
+{{--                <a href="/zmenaHesla" class="nav-link text-white">--}}
+{{--                    <button type="submit" class="btn btn-primary tlacitkoZmenaHesla">Chcem zmeniť heslo</button>--}}
+{{--                </a>--}}
+
+{{--                <a href="/zmenaHesla" class="btn btn-primary tlacitkoZmenaHesla">Chcem zmeniť heslo</a>--}}
+
             </form>
         </div>
     </div>

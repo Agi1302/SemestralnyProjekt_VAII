@@ -51,6 +51,9 @@ Route::get('/zmenaNastaveni', function () {
     return view('viewProfiloveUdajeNastavenia');
 });
 
+Route::get('/zmenaHesla', function () {
+    return view('viewProfiloveUdajeZmenaHesla');
+});
 
 
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);

@@ -75,7 +75,7 @@ body {
 
 .formPridaniaDoDatabazy{
     width: 30rem;
-    margin-top: 20rem;
+    margin-top: 18rem;
     position: relative;
     top: -20px;
     background-color: rgba(30, 9, 169, 0.76);
@@ -86,10 +86,16 @@ body {
 
 
 
+
 .tlacitkoZmenaHesla:hover {
     background-color: rgb(255, 255, 255);
     color: #1281a1;
     border-color: #1281a1;
+}
+
+.moznost{
+    background-color: rgba(26, 5, 161, 0.89);
+    border-radius:10rem;
 }
 
 .tlacitkoZmenaHesla {

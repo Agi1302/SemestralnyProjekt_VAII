@@ -10,4 +10,13 @@ class Vrchol extends Model
     use HasFactory;
 
     protected $table = 'vrcholy';
+
+    protected $fillable = [
+        'nazov_vrcholu',
+        'stat',
+        'okres',
+        'nadmorska_vyska_vrcholu',
+        'pohorie',
+        'najlahsi_vystup_z',
+    ];
 }

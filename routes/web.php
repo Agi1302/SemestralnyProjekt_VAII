@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ControllerPrihlasenie;
 use App\Http\Controllers\controllerRegistracia;
+use App\Http\Controllers\ControllerVrchol;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -56,11 +57,12 @@ Route::get('/zmenaHesla', function () {
 });
 
 
-Route::get('/pridavanieZaznamovDoDatabazy', function () {
+Route::get('/upravenieDatabazy', function () {
     return view('viewUpravenieDatabazy');
 });
 
-
+Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
-Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
+Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
+Route::get('/pridajPrispevok', [ControllerVrchol::class, 'create'])->name('vrcholy.create');

@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('vrcholy', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazov_vrcholu');
+            $table->string('stat');
+            $table->string('okres');
             $table->integer('nadmorska_vyska_vrcholu');
-            $table->string('region');
             $table->string('pohorie');
+            $table->string('najlahsi_vystup_z');
             $table->timestamps();
         });
     }

@@ -13,10 +13,11 @@ class VrcholFactory extends Factory
     {
         return [
             'nazov_vrcholu' => $this->faker->word,
-            'nadmorska_vyska_vrcholu' => $this->faker->numberBetween(500, 2500),
-            'region' => $this->faker->word,
+            'stat' => $this->faker->word,
+            'okres' => $this->faker->word,
+            'nadmorska_vyska_vrcholu' => $this->faker->numberBetween(500, 3000),
             'pohorie' => $this->faker->word,
-            'region_2' => $this->faker->word,
+            'najlahsi_vystup_z' => $this->faker->word,
         ];
     }
 }

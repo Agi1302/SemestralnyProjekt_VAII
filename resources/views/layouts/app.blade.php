@@ -9,7 +9,8 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-{{--    <link rel="stylesheet" href="{{ asset('css/stylHlavnaStranka.css') }}">--}}
+
+   <link rel="stylesheet" href="{{ asset('css/stylVseobecny.css') }}">
     <title>Zamiluj si turistiku</title>
 </head>
 <body>
@@ -91,22 +92,25 @@
                             <li><a class="dropdown-item" href="/odhlasenie">Odhlásenie</a></li>
                         </ul>
                     </li>
-
-
-
-
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="/profil">Môj profil</a>--}}
-{{--                    </li>--}}
                 @endauth
-
-
-
-
-
             </ul>
         </div>
     </div>
+
+
+
+
+{{--    vypis chybovych hlaseni--}}
+    @if($errors->any())
+    <div class="alert alert-danger oknoChybovaHlaska align-content-center">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li class="textChybovaHlaska"><i></i> {{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
 </div>
 
 <div class="content">

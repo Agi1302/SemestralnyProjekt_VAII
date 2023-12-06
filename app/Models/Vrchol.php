@@ -17,7 +17,6 @@ class Vrchol extends Model
         'okres',
         'nadmorska_vyska',
         'pohorie',
-        'najlahsi_vystup_z',
         'typ_tury',
         'narocnost',
         'dostupne_v_zime',

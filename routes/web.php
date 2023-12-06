@@ -65,7 +65,6 @@ Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
-Route::get('/pridajPrispevok', [ControllerVrchol::class, 'create'])->name('vrcholy.create');
 
-Route::post('/zmazatPrispevok', [ControllerVrchol::class, 'destroy'])->name('vrcholy.destroy');
 
+//Route::delete('/vrcholy/{nazov}', [ControllerVrchol::class, 'destroy'])->name('vrcholy.destroy');

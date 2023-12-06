@@ -30,10 +30,10 @@
                 <label for="pwd2"></label>
                 <input type="password" class="form-control" id="pwd2" placeholder="Potvrdenie hesla *" name="Rptpwd" >
             </div>
-            <div class="checkbox">
-                <label for="remember" >  <span>Zapamätať prihlásenie</span> </label>
-                <input type="checkbox" id="remember">
-            </div>
+{{--            <div class="checkbox">--}}
+{{--                <label for="remember" >  <span>Zapamätať prihlásenie</span> </label>--}}
+{{--                <input type="checkbox" id="remember">--}}
+{{--            </div>--}}
             <button type="submit" class="btn btn-success buttonPotvrdenie">POTVRDIŤ <i
                     class="glyphicon glyphicon-send buttonPotvrdenie"></i></button>
         </form>

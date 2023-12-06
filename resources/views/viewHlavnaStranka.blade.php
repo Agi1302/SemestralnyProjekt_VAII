@@ -21,7 +21,7 @@
         <div class="row">
             <!-- Filter: Typ túry -->
             <div class="col-xl-2 mb-3">
-                <select class="form-select filtre" id="tourType">
+                <label for="tourType"></label><select class="form-select filtre" id="tourType">
                     <option selected>TYP TÚRY</option>
                     <option value="1">Horská túra</option>
                     <option value="3">Oddychová túra</option>
@@ -30,7 +30,7 @@
 
             <!-- Filter: Obtiažnosť -->
             <div class="col-xl-2 mb-3">
-                <select class="form-select filtre" id="difficulty">
+                <label for="difficulty"></label><select class="form-select filtre" id="difficulty">
                     <option selected>NÁROČNOSŤ</option>
                     <option value="1">Ľahká</option>
                     <option value="2">Stredná</option>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="col-xl-2 mb-3">
-                <select class="form-select filtre" id="season">
+                <label for="season"></label><select class="form-select filtre" id="season">
                     <option selected>DOSTUPNÉ V ZIME</option>
                     <option value="ÁNO">ÁNO</option>
                     <option value="NIE">NIE</option>
@@ -49,7 +49,7 @@
 
             <!-- Filter: Dĺžka trasy -->
             <div class="col-xl-2 mb-3 ">
-                <select class="form-select filtre" id="routeLength">
+                <label for="routeLength"></label><select class="form-select filtre" id="routeLength">
                     <option selected>DĹŽKA TRASY</option>
                     <option value="1">Do 5 km</option>
                     <option value="2">5 - 15 km</option>
@@ -59,7 +59,7 @@
 
             <!-- Filter: Dostupnosť -->
             <div class="col-xl-2 mb-3">
-                <select class="form-select filtre" id="availability">
+                <label for="availability"></label><select class="form-select filtre" id="availability">
                     <option selected>DOSTUPNOSŤ</option>
                     <option value="1">Bez horského vodcu</option>
                     <option value="2">S horským vodcom</option>

@@ -116,12 +116,36 @@ body {
 }
 
 .nadpisTabulky1{
-    margin-left: 13rem;
+
     font-size: larger;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+
 }
 
-.nadpisTabulky2{
-    margin-left: 7rem;
+.nadpisTabulky{
     font-size: larger;
+    margin-bottom: 1rem;
 
+}
+
+.formPridanie{
+    width: 100%;
+}
+
+.tlacitkoPridaniePrispevku{
+    background-color: rgba(30, 9, 169, 0.47);
+    border-width: 2px;
+    width: 160px;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 2px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.formMazanie{
+    margin-top: 5rem;
+    margin-left: 0rem;
 }

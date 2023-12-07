@@ -82,14 +82,10 @@ class ControllerVrchol extends Controller
 
     public function destroy($id)
     {
-
         $vrchol = Vrchol::find($id);
 
-
         if ($vrchol) {
-
             $vrchol->delete();
-
 
             session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
             return redirect("/");
@@ -102,16 +98,12 @@ class ControllerVrchol extends Controller
 
     public function editacia($id)
     {
-
         $vrchol = Vrchol::find($id);
         return view('viewEditovaniePrispevku', compact('vrchol'));
-
     }
 
     public function ulozEditaciu(Request $request)
     {
-
-
 
         $validatedData = $request->validate([
             'nazov_vrcholu' => 'required|max:200',
@@ -154,8 +146,6 @@ class ControllerVrchol extends Controller
             $vrchol->dlzka_trasy = $validatedData['dlzka_trasy'];
             $vrchol->dostupnost = $validatedData['dostupnost'];
 
-
-
             try {
                 $vrchol->save();
                 session()->flash('status', 'Príspevok bol editovaný');
@@ -167,7 +157,4 @@ class ControllerVrchol extends Controller
         }
         return redirect("/");
     }
-
-
-
 }

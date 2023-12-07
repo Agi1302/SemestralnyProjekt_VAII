@@ -110,6 +110,9 @@
                         <p class="mt-2">Nadmorská výška: {{ $vrchol->nadmorska_vyska}}</p>
                         <p class="mt-2">Pohorie: {{ $vrchol->pohorie}}</p>
 
+
+                        @auth
+                        @if(Auth::user()->email == "adminadmin@gmail.com")
                         <div class="row">
                             <div class="col-lg-6 mb-6">
                                 <form method="POST" action="/vrchol/{{ $vrchol->id }}">
@@ -123,7 +126,8 @@
                                 <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vrchol->id}}">EDIT</a>
                             </div>
                         </div>
-
+                        @endif
+                        @endauth
                     </div>
                 </div>
             @endforeach

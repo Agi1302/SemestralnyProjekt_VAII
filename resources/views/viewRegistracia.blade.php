@@ -28,7 +28,8 @@
             </div>
             <div class="form-group">
                 <label for="pwd2"></label>
-                <input type="password" class="form-control" id="pwd2" placeholder="Potvrdenie hesla *" name="Rptpwd" >
+                <label for="heslo2"></label>
+                <input type="password" class="form-control" id="heslo2" placeholder="Potvrdenie hesla *" name="heslo2" >
             </div>
 {{--            <div class="checkbox">--}}
 {{--                <label for="remember" >  <span>Zapamätať prihlásenie</span> </label>--}}

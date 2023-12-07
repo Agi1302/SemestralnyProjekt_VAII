@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-   <link rel="stylesheet" href="{{ asset('css/stylVseobecny.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylVseobecny.css') }}">
+    <script   src="{{asset("vseobecny.js")}}"></script>
     <title>Zamiluj si turistiku</title>
+
 </head>
 <body>
 <div id="mainNavigation">

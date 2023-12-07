@@ -67,4 +67,5 @@ Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
 
 
-//Route::delete('/vrcholy/{nazov}', [ControllerVrchol::class, 'destroy'])->name('vrcholy.destroy');
+
+Route::delete('/vrchol/{id}', [ControllerVrchol::class, 'destroy']);

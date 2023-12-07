@@ -91,25 +91,25 @@
 
 
 
-{{--        <form class="formPridaniaDoDatabazy formMazanie" method="POST" action="{{ route('vrcholy.destroy', ['nazov' => 'nazov_vrcholu']) }}">--}}
-{{--            @csrf--}}
-{{--            <label class="nadpisTabulky">MAZANIE PRÍSPEVKU</label>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
+        <form class="formPridaniaDoDatabazy formMazanie" method="POST" >
+            @csrf
+            <label class="nadpisTabulky">MAZANIE PRÍSPEVKU</label>
+            <div class="row">
+                <div class="col-lg-12">
 
-{{--                    <div class="form-group">--}}
-{{--                        <label for="region">Názov vrcholu:</label>--}}
-{{--                        <label for="nazov"></label>--}}
-{{--                        <input type="text" class="form-control" id="nazov" name="nazov" placeholder='názov vrcholu'>--}}
-{{--                    </div>--}}
+                    <div class="form-group">
+                        <label for="region">Názov vrcholu:</label>
+                        <label for="nazov"></label>
+                        <input type="text" class="form-control" id="nazov" name="nazov" placeholder='názov vrcholu'>
+                    </div>
 
 
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">--}}
-{{--                Zmazať príspevok--}}
-{{--            </button>--}}
-{{--        </form>--}}
+                </div>
+            </div>
+            <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">
+                Zmazať príspevok
+            </button>
+        </form>
 
 
 

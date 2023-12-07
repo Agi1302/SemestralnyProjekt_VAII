@@ -79,4 +79,28 @@ class ControllerVrchol extends Controller
         return view('viewHlavnaStranka', compact('vrcholy'));
     }
 
+
+    public function destroy($id)
+    {
+
+        $vrchol = Vrchol::find($id);
+
+        // skontrolujte, či príspevok existuje
+        if ($vrchol) {
+            // odstráňte príspevok
+            $vrchol->delete();
+
+            // vráťte správu o úspechu
+            session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
+            return redirect("/");
+        } else {
+            // vráťte chybovú správu
+            session()->flash('neUspesneZmazaniePrispevku', 'Príspevok sa nepodarilo odstrániť');
+            return redirect("/");
+        }
+    }
+
+
+
+
 }

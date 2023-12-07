@@ -15,6 +15,22 @@
         </div>
     @endif
 
+    @if(session('uspesneZmazaniePrispevku'))
+        <div class="alert alert-success">
+            {{ session('uspesneZmazaniePrispevku') }}
+        </div>
+    @endif
+
+
+    @if(session('neUspesneZmazaniePrispevku'))
+        <div class="alert alert-success">
+            {{ session('neUspesneZmazaniePrispevku') }}
+        </div>
+    @endif
+
+
+
+
     <div class="container  filtrovanie">
 
         <!-- Riadok s filtrami -->
@@ -75,12 +91,12 @@
     </div>
 
 
-
-
-
     <div class="container mt-5">
 
-        <!-- Riadok 1 -->
+
+
+
+
         <div class="row justify-content-center">
 
             @foreach($vrcholy as $vrchol)
@@ -93,8 +109,16 @@
                         <p class="mt-2">Okres: {{ $vrchol->okres}}</p>
                         <p class="mt-2">Nadmorská výška: {{ $vrchol->nadmorska_vyska}}</p>
                         <p class="mt-2">Pohorie: {{ $vrchol->pohorie}}</p>
+
+
+
+                        <form method="POST" action="/vrchol/{{ $vrchol->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
+                        </form>
                     </div>
                 </div>
             @endforeach
-    
+        </div>
 @endsection

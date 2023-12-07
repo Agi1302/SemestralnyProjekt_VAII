@@ -113,7 +113,7 @@ class ControllerVrchol extends Controller
             'pohorie' => 'required|max:200',
             'typ_tury' => 'required|in:horska,oddychova',
             'narocnost' => 'required|in:lahka,stredna,tazka',
-            'dostupne_v_zime' => 'required|in:ano, nie',
+            'dostupne_v_zime' => 'required|in:ANO,NIE',
             'dlzka_trasy' => 'required|in:1-5,5-10,10+',
             'dostupnost' => 'required|in:bez_vodcu,s_vodcom',
             'id' => 'required|integer'

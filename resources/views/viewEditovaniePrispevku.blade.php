@@ -52,8 +52,8 @@
                     <div class="form-group">
                         <label for="dostupne_v_zime">Dostupné v zime:</label>
                         <select class="form-control" id="dostupne_v_zime" name="dostupne_v_zime">
-                            <option class="moznost" value="ano">ano</option>
-                            <option class="moznost" value="nie">nie</option>
+                            <option class="moznost" value="ANO">ANO</option>
+                            <option class="moznost" value="NIE">NIE</option>
                         </select>
                     </div>
 

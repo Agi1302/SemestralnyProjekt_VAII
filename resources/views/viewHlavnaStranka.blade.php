@@ -110,7 +110,6 @@
                         <p class="mt-2">Nadmorská výška: {{ $vrchol->nadmorska_vyska}}</p>
                         <p class="mt-2">Pohorie: {{ $vrchol->pohorie}}</p>
 
-
                         @auth
                         @if(Auth::user()->email == "adminadmin@gmail.com")
                         <div class="row">

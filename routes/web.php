@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('viewHlavnaStranka');
-});
 
 Route::get('/chaty', function () {
     return view('viewChaty');
@@ -62,6 +59,9 @@ Route::get('/upravenieDatabazy', function () {
 });
 
 Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
+Route::get('/', [ControllerVrchol::class, "ziskanieVrcholov"]);
+
+
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');

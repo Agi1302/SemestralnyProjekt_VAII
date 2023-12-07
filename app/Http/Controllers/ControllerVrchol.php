@@ -72,16 +72,11 @@ class ControllerVrchol extends Controller
         return view('viewUpravenieDatabazy');
     }
 
-//    public function destroy($nazov)
-//    {
-//        $vrchol = Vrchol::where('nazov_vrcholu', $nazov)->first();
-//
-//        if ($vrchol) {
-//            $vrchol->delete();
-//            return redirect()->route('vrcholy.index')->with('success', 'Príspevok bol úspešne vymazaný');
-//        } else {
-//            return redirect()->route('vrcholy.index')->with('error', 'Príspevok s daným názvom sa nenašiel');
-//        }
-//    }
+
+
+    public function ziskanieVrcholov() {
+        $vrcholy = Vrchol::all();
+        return view('viewHlavnaStranka', compact('vrcholy'));
+    }
 
 }

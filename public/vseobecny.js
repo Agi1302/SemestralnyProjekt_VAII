@@ -1,9 +1,4 @@
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
-
-
 
     document.getElementById('heslo').onkeyup = function () {
         var heslo = document.getElementById('heslo');
@@ -24,9 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             heslo.setCustomValidity("");
         }
-
-
-
     };
 
     document.getElementById('heslo2').onkeyup = function () {
@@ -48,9 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             heslo.setCustomValidity("");
         }
-
-
-
     };
 
 });

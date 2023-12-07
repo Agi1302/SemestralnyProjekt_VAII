@@ -74,41 +74,27 @@
 
     </div>
 
+
+
+
+
     <div class="container mt-5">
 
         <!-- Riadok 1 -->
         <div class="row justify-content-center">
 
-            <!-- Stĺpec 1 -->
-            <div class="col-lg-4 mb-4">
-                <div class="karticka">
-                    <p class="mt-2 kartickaNadpisy">Lomnícky štít</p>
-                    <img src="{{asset('Obrazky/LomnickyStit.jpg')}}" class="img-fluid" alt="Popis">
-                    <p class="mt-2">Text pod obrázkom 1</p>
+            @foreach($vrcholy as $vrchol)
+                <div class="col-lg-4 mb-4">
+                    <div class="karticka">
+                        <p class="mt-2 kartickaNadpisy">{{$vrchol->nazov_vrchola}}</p>
+                        <img src="{{asset('Obrazky/LomnickyStit.jpg')}}" class="img-fluid" alt="Popis">
+                        <p class="mt-2">Názov vrchola:  {{$vrchol->nazov_vrchola}}</p>
+                        <p class="mt-2">Štát: {{ $vrchol->stat}}</p>
+                        <p class="mt-2">Okres: {{ $vrchol->okres}}</p>
+                        <p class="mt-2">Nadmorská výška: {{ $vrchol->nadmorska_vyska}}</p>
+                        <p class="mt-2">Pohorie: {{ $vrchol->pohorie}}</p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Stĺpec 2 -->
-            <div class="col-lg-4 mb-4">
-                <div class="karticka">
-                    <p class=" mt-2 kartickaNadpisy">Kriváň</p>
-                    <img src="{{asset('Obrazky/Krivan.jpg')}}" class="img-fluid" alt="Popis">
-                    <p class="mt-2">Text pod obrázkom 2</p>
-                </div>
-            </div>
-
-            <!-- Stĺpec 3 -->
-            <div class="col-lg-4 mb-4">
-                <div class="karticka">
-                    <p class="mt-2 kartickaNadpisy">Rysy</p>
-                    <img src="{{asset('Obrazky/Rysy.jpg')}}" class="img-fluid" alt="Popis">
-                    <p class="mt-2">Text pod obrázkom 3</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
+            @endforeach
+    
 @endsection

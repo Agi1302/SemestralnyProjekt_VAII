@@ -53,6 +53,9 @@ Route::get('/zmenaHesla', function () {
     return view('viewProfiloveUdajeZmenaHesla');
 });
 
+Route::get('/viewEditovaniePrispevku/{id}', [ControllerVrchol::class, 'editacia']);
+
+
 
 Route::get('/upravenieDatabazy', function () {
     return view('viewUpravenieDatabazy');
@@ -65,6 +68,7 @@ Route::get('/', [ControllerVrchol::class, "ziskanieVrcholov"]);
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
+Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu'])->name('vrcholyEditacia');
 
 
 

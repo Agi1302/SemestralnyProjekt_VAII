@@ -1,44 +1,36 @@
 @extends('layouts.app')
 @section('content')
 
-
-
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-
-
-
     <link rel="stylesheet" href="{{ asset('css/stylUpravaDatabazy.css') }}">
 
+
     <div class="container ">
-        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="{{ route('vrcholy.store') }}">
+        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="{{ route('vrcholyEditacia') }}">
             @csrf
-            <label class="nadpisTabulky">PRIDANIE PRÍSPEVKU</label>
+            <input type="hidden" name="id" value="{{$vrchol->id}}">
+            <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU</label>
             <div class="row">
                 <div class="col-lg-6">
                     <!-- Prvý stĺpec -->
                     <div class="form-group">
                         <label for="nazov_vrcholu">Názov vrcholu:</label>
-                        <input type="text" class="form-control" id="nazov_vrcholu" name="nazov_vrcholu" placeholder='vrchol názov'>
+                        <input type="text" class="form-control" id="nazov_vrcholu" name="nazov_vrcholu" placeholder='vrchol názov' value="{{ $vrchol->nazov_vrcholu}}">
                     </div>
                     <div class="form-group">
                         <label for="nazov_vrcholu">Štát:</label>
-                        <label for="stat"></label><input type="text" class="form-control" id="stat" name="stat" placeholder='štát'>
+                        <label for="stat"></label><input type="text" class="form-control" id="stat" name="stat" placeholder='štát' value="{{ $vrchol->stat}}">
                     </div>
                     <div class="form-group">
                         <label for="region">Okres:</label>
-                        <input type="text" class="form-control" id="okres" name="okres" placeholder='názov okresu'>
+                        <input type="text" class="form-control" id="okres" name="okres" placeholder='názov okresu' value={{$vrchol->okres}}">
                     </div>
                     <div class="form-group">
                         <label for="nadmorska_vyska_vrcholu">Nadmorská výška vrcholu:</label>
-                        <input type="text" class="form-control" id="nadmorska_vyska" name="nadmorska_vyska" placeholder='m.n.m'>
+                        <input type="text" class="form-control" id="nadmorska_vyska" name="nadmorska_vyska" placeholder='m.n.m' value="{{$vrchol->nadmorska_vyska}}">
                     </div>
                     <div class="form-group">
                         <label for="pohorie">Pohorie:</label>
-                        <input type="text" class="form-control" id="pohorie" name="pohorie" placeholder='názov pohoria'>
+                        <input type="text" class="form-control" id="pohorie" name="pohorie" placeholder='názov pohoria' value="{{$vrchol->pohorie}}">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -84,7 +76,7 @@
                 </div>
             </div>
             <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">
-                Pridať príspevok
+                Aktualizuj
             </button>
         </form>
     </div>
@@ -92,6 +84,4 @@
 
 
 
-
 @endsection
-

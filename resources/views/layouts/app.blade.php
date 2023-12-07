@@ -88,7 +88,7 @@
                             <li><a class="dropdown-item" href="/zobrazenieProfilovychUdajov">Profilové údaje</a></li>
 
                             @if(Auth::check() && Auth::user()->meno == 'admin')
-                                <li><a class="dropdown-item" href="/upravenieDatabazy">Uprav databázu</a></li>
+                                <li><a class="dropdown-item" href="/upravenieDatabazy">Pridaj príspevok</a></li>
                             @endif
 
                             <li><a class="dropdown-item" href="/odhlasenie">Odhlásenie</a></li>

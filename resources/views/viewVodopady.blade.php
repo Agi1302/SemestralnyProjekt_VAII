@@ -13,7 +13,7 @@
     <div class="row vodopad align-items-center">
 
         <div class="col-lg-5 lavyStlpecImg">
-            <img src="Obrazky/vodopadSutovsky.jpg" class="obrazokLavy" alt="Šutovský vodopád">
+            <img src="Obrazky/Vodopady/vodopadSutovsky.jpg" class="obrazokLavy" alt="Šutovský vodopád">
         </div>
         <div class="col-lg-7 stlpecSTextom">
             <div class="zaoblenieRohov">
@@ -53,7 +53,7 @@
         </div>
 
         <div class="col-lg-5 pravyStlpecImg">
-            <img src="Obrazky/vodopadLucansky.jpg" class="obrazokPravy" alt="Šutovský vodopád">
+            <img src="Obrazky/Vodopady/vodopadLucansky.jpg" class="obrazokPravy" alt="Šutovský vodopád">
         </div>
     </div>
 
@@ -61,7 +61,7 @@
     <div class="row vodopad align-items-center">
 
         <div class="col-lg-5 lavyStlpecImg">
-            <img src="Obrazky/vodopadStudenehoPotoka.jpeg" class="obrazokLavy" alt="Šutovský vodopád">
+            <img src="Obrazky/Vodopady/vodopadStudenehoPotoka.jpeg" class="obrazokLavy" alt="Šutovský vodopád">
         </div>
         <div class="col-lg-7 stlpecSTextom">
             <div class="zaoblenieRohov">
@@ -107,7 +107,7 @@
         </div>
 
         <div class="col-lg-5 pravyStlpecImg">
-            <img src="Obrazky/vodopadSkok.jpg" class="obrazokPravy" alt="Šutovský vodopád">
+            <img src="Obrazky/Vodopady/vodopadSkok.jpg" class="obrazokPravy" alt="Šutovský vodopád">
         </div>
     </div>
 
@@ -115,7 +115,7 @@
     <div class="row vodopad align-items-center">
 
         <div class="col-lg-5 lavyStlpecImg">
-            <img src="Obrazky/vodopadBystrehoPotoka.jpg" class="obrazokLavy" alt="Šutovský vodopád">
+            <img src="Obrazky/Vodopady/vodopadBystrehoPotoka.jpg" class="obrazokLavy" alt="Šutovský vodopád">
         </div>
         <div class="col-lg-7 stlpecSTextom">
             <div class="zaoblenieRohov">

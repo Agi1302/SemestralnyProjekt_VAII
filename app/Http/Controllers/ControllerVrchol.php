@@ -28,7 +28,8 @@ class ControllerVrchol extends Controller
             'narocnost' => 'required|in:lahka,stredna,tazka',
             'dostupne_v_zime' => 'required|in:ANO,NIE',
             'dlzka_trasy' => 'required|in:1-5,5-10,10+',
-            'dostupnost' => 'required|in:bez_vodcu,s_vodcom'
+            'dostupnost' => 'required|in:bez_vodcu,s_vodcom',
+            'obrazok' => 'required|max:200'
         ],
             [
                 'nazov_vrcholu.required' => 'Položka názov vrcholu je povinná',
@@ -36,6 +37,7 @@ class ControllerVrchol extends Controller
                 'stat.required' => 'Položka Štát je povinná',
                 'stat.max' => 'Štát môže mať maximálne 200 znakov',
                 'okres.required' => 'Položka Okres je povinná',
+                'obrazok.required' => 'Položka Obrazok je povinná',
                 'okres.max' => 'Okres môže mať maximálne 200 znakov',
                 'nadmorska_vyska.required' => 'Položka Nadmorská výška je povinná',
                 'nadmorska_vyska.integer' => 'Nadmorská výška musí byť celé číslo',
@@ -55,6 +57,7 @@ class ControllerVrchol extends Controller
         $vrchol->dostupne_v_zime = $validatedData['dostupne_v_zime'];
         $vrchol->dlzka_trasy = $validatedData['dlzka_trasy'];
         $vrchol->dostupnost = $validatedData['dostupnost'];
+        $vrchol->obrazok = $validatedData['obrazok'];
 
         try {
             $vrchol->save();
@@ -117,12 +120,14 @@ class ControllerVrchol extends Controller
             'dostupne_v_zime' => 'required|in:ANO,NIE',
             'dlzka_trasy' => 'required|in:1-5,5-10,10+',
             'dostupnost' => 'required|in:bez_vodcu,s_vodcom',
+            'obrazok' => 'required|max:200',
             'id' => 'required|integer'
         ],
             [
                 'nazov_vrcholu.required' => 'Položka názov vrcholu je povinná',
                 'nazov_vrcholu.max' => 'Názov vrcholu môže mať maximálne 200 znakov',
                 'stat.required' => 'Položka Štát je povinná',
+                'obrazok.required' => 'Položka Obrazok je povinná',
                 'stat.max' => 'Štát môže mať maximálne 200 znakov',
                 'okres.required' => 'Položka Okres je povinná',
                 'okres.max' => 'Okres môže mať maximálne 200 znakov',
@@ -146,6 +151,7 @@ class ControllerVrchol extends Controller
             $vrchol->dostupne_v_zime = $validatedData['dostupne_v_zime'];
             $vrchol->dlzka_trasy = $validatedData['dlzka_trasy'];
             $vrchol->dostupnost = $validatedData['dostupnost'];
+            $vrchol->obrazok = $validatedData['obrazok'];
 
             try {
                 $vrchol->save();

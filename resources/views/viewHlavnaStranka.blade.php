@@ -29,6 +29,9 @@
     @endif
 
 
+
+
+
     <div class="container  filtrovanie">
 
         <!-- Riadok s filtrami -->
@@ -98,16 +101,20 @@
                 <div class="col-lg-4 mb-4">
                     <div class="karticka">
 
-                        <form method="POST" action="{{ route('favourite.pridanieOdobranieFavourite', $vrchol) }}">
+                        <form method="POST" action="{{ route('favourite.pridanieOdobranieFavourite', $vrchol) }}" class="favourite-form">
                             @csrf
-                            <button type="submit " class="srdiecko">
-                                <i class="bi bi-heart "></i>
-                            </button>
+                            @auth
+                                <button type="submit" class="srdiecko">
+
+                                        <i class="bi bi-heart"></i>
+
+                                </button>
+                            @endauth
                         </form>
 
 
                         <p class="mt-2 kartickaNadpisy">{{$vrchol->nazov_vrchola}}</p>
-                        <img src="{{asset('Obrazky/LomnickyStit.jpg')}}" class="img-fluid" alt="Popis">
+                        <img src="{{asset('Obrazky/Vrcholy/'.$vrchol->obrazok)}}" class="img-fluid" alt="Popis">
                         <p class="mt-2">Názov vrcholu: {{ $vrchol->nazov_vrcholu}}</p>
                         <p class="mt-2">Štát: {{ $vrchol->stat}}</p>
                         <p class="mt-2">Okres: {{ $vrchol->okres}}</p>
@@ -118,29 +125,19 @@
                             @if(Auth::user()->email == "adminadmin@gmail.com")
                                 <div class="row">
                                     <div class="col-lg-6 mb-6">
-
-                                        @php
-                                            $jeOblubeny = \App\Http\Controllers\ControllerFavourite::where('user_id', Auth::id())
-                                                ->where('vrchol_id', $vrchol->id)
-                                                ->exists();
-                                        @endphp
-
-                                        <form method="POST"
-                                              action="{{ route('favourite.pridanieOdobranieFavourite', $vrchol) }}">
+                                        <form method="POST" action="/vrchol/{{ $vrchol->id }}">
                                             @csrf
-                                            <button type="submit"
-                                                    class="srdiecko {{ $jeOblubeny ? 'zakliknuteSrdiecko' : '' }}">
-                                                <i class="bi bi-heart"></i>
-                                            </button>
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
                                         </form>
                                     </div>
 
                                     <div class="col-lg-6 mb-6">
-                                        <a type="submit"
-                                           class="btn btn-primary aplikovatTlac align-content-center w-100 "
-                                           href="{{'/viewEditovaniePrispevku/'.$vrchol->id}}">Editovanie</a>
+                                        <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vrchol->id}}">Editovanie príspevku</a>
                                     </div>
                                 </div>
+
+
                             @endif
                         @endauth
                     </div>

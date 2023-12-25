@@ -7,7 +7,6 @@
 
 
 
-
 <div class="container">
     <div class="row">
         <!-- Navigačný panel -->
@@ -58,63 +57,54 @@
             </div>
         </div>
 
-        <!-- Formulár -->
-        <div class="col-lg-10 pravyStlpecImg">
-            <form class="formOpravnyFormular">
-                <div class="form-group">
-                    <label for="firstName">Meno:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder={{ Auth::user()->meno }}>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Priezvisko:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder={{ Auth::user()->priezvisko }}>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder={{ Auth::user()->email }}>
-                </div>
 
 
-                <button class="nav-item tlacitkoZmenaHesla">
-                    <a href="#" class="nav-link text-white">
-                        <i></i> Uložiť zmenené údaje
-                    </a>
-                </button>
+<div class="row justify-content-center">
 
+@foreach($vrcholy as $vrchol)
+    <div class="col-lg-4 mb-4">
+        <div class="karticka">
 
-                <button class="nav-item tlacitkoZmenaHesla">
-                    <a href="/zmenaHesla" class="nav-link text-white">
-                        <i class="bi bi-key-fill"></i> Zmena hesla
-                    </a>
-                </button>
+            <form method="POST" action="{{ route('favourite.pridanieOdobranieFavourite', $vrchol) }}" class="favourite-form">
+                @csrf
+                @auth
+                    <button type="submit" class="srdiecko">
+
+                        <i class="bi bi-heart"></i>
+
+                    </button>
+                @endauth
             </form>
+
+
+            <p class="mt-2 kartickaNadpisy">{{$vrchol->nazov_vrchola}}</p>
+            <img src="{{asset('Obrazky/LomnickyStit.jpg')}}" class="img-fluid" alt="Popis">
+            <p class="mt-2">Názov vrcholu: {{ $vrchol->nazov_vrcholu}}</p>
+            <p class="mt-2">Štát: {{ $vrchol->stat}}</p>
+            <p class="mt-2">Okres: {{ $vrchol->okres}}</p>
+            <p class="mt-2">Nadmorská výška: {{ $vrchol->nadmorska_vyska}}</p>
+            <p class="mt-2">Pohorie: {{ $vrchol->pohorie}}</p>
+
+            @auth
+                @if(Auth::user()->email == "adminadmin@gmail.com")
+                    <div class="row">
+                        <div class="col-lg-6 mb-6">
+                            <form method="POST" action="/vrchol/{{ $vrchol->id }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
+                            </form>
+                        </div>
+
+                        <div class="col-lg-6 mb-6">
+                            <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vrchol->id}}">Editovanie príspevku</a>
+                        </div>
+                    </div>
+
+
+                @endif
+            @endauth
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @endforeach
+    </div>

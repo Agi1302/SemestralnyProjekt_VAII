@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('dostupne_v_zime');
             $table->string('dlzka_trasy');
             $table->string('dostupnost');
+            $table->string('obrazok')->nullable();
             $table->timestamps();
         });
     }

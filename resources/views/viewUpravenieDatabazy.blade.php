@@ -40,6 +40,11 @@
                         <label for="pohorie">Pohorie:</label>
                         <input type="text" class="form-control" id="pohorie" name="pohorie" placeholder='názov pohoria'>
                     </div>
+                    <div class="form-group">
+                        <label for="pohorie">Obrázok:</label>
+                        <input type="text" class="form-control" id="obrazok" name="obrazok" placeholder='url obrázka'>
+                    </div>
+
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">

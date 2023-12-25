@@ -14,7 +14,7 @@
     <div class="row align-items-center odstavec">
 
         <div class="col-md-4 mb-4 d-flex align-items-center">
-            <img src="Obrazky/ferrataMartin.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
+            <img src="Obrazky/Ferraty/ferrataMartin.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
                  alt="...">
         </div>
 
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <img src="Obrazky/ferrataDveVeze.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
+            <img src="Obrazky/Ferraty/ferrataDveVeze.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
                  alt="...">
         </div>
     </div>
@@ -63,7 +63,7 @@
 
     <div class="row  align-items-center odstavec">
         <div class="col-md-4 mb-4">
-            <img src="Obrazky/ferrataSkalka1.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
+            <img src="Obrazky/Ferraty/ferrataSkalka1.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
                  alt="...">
         </div>
         <div class="col-md-4 mb-4">
@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <img src="Obrazky/ferrataSkalka.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
+            <img src="Obrazky/Ferraty/ferrataSkalka.jpg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
                  alt="...">
         </div>
     </div>
@@ -89,7 +89,7 @@
 
     <div class="row  align-items-center odstavec">
         <div class="col-md-4 mb-4">
-            <img src="Obrazky/ferrataKysel.jpeg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
+            <img src="Obrazky/Ferraty/ferrataKysel.jpeg" class="img-fluid rounded-start obrazokFerrataMartin  mx-auto d-block"
                  alt="...">
         </div>
         <div class="col-md-8 mb-8">

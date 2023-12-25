@@ -21,7 +21,7 @@ class ControllerRegistracia extends Controller
         $user->meno = $validatedData['meno'];
         $user->priezvisko = $validatedData['priezvisko'];
         $user->email = $validatedData['email'];
-        $user->heslo = Hash::make($validatedData['heslo']); // Hashování hesla
+        $user->heslo = Hash::make($validatedData['heslo']);
 
         //$post->description = $request->description;
         $user->save();

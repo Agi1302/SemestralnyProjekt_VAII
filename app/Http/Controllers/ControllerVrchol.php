@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vrchol;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ControllerVrchol extends Controller
 {
@@ -25,7 +26,7 @@ class ControllerVrchol extends Controller
             'pohorie' => 'required|max:200',
             'typ_tury' => 'required|in:horska,oddychova',
             'narocnost' => 'required|in:lahka,stredna,tazka',
-            'dostupne_v_zime' => 'required|in:ano, nie',
+            'dostupne_v_zime' => 'required|in:ANO,NIE',
             'dlzka_trasy' => 'required|in:1-5,5-10,10+',
             'dostupnost' => 'required|in:bez_vodcu,s_vodcom'
         ],
@@ -155,6 +156,14 @@ class ControllerVrchol extends Controller
 
             }
         }
-        return redirect("/");
+        return redirect("/");}
+        public function addFavouritePost(Request $request, Vrchol $vrchol) {
+        $pouzivatel = Auth::user();
+        $pouzivatel->favouritePosts()->attach($vrchol->id);
+
+        return back();
+
     }
+
+
 }

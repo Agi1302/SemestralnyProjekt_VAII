@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControllerFavourite;
 use App\Http\Controllers\ControllerPrihlasenie;
 use App\Http\Controllers\controllerRegistracia;
 use App\Http\Controllers\ControllerVrchol;
@@ -71,5 +72,8 @@ Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcho
 Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu'])->name('vrcholyEditacia');
 
 
-
+Route::post('/favourite/pridanieOdobranieFavourite/{vrchol}', [ControllerFavourite::class, 'pridanieOdobranieFavourite'])->name('favourite.pridanieOdobranieFavourite');
 Route::delete('/vrchol/{id}', [ControllerVrchol::class, 'destroy']);
+
+
+

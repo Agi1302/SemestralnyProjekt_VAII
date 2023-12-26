@@ -35,5 +35,13 @@ class Pouzivatel extends Authenticatable
     {
         return $this->heslo;
     }
+
+
+    // many to many, 1.nazov modelu, 2.nazov prepajajucej tabulky, 3. nazov stlpca z prepajajucej- odkazuje na pouzivatela
+    public function favourites()
+    {
+        return $this->belongsToMany(Vrchol::class, 'favourites', 'user_id', 'vrchol_id');
+    }
+
 }
 

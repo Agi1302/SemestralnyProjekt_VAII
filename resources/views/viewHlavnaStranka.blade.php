@@ -93,10 +93,7 @@
 
 
     <div class="container mt-5">
-
-
         <div class="row justify-content-center">
-
             @foreach($vrcholy as $vrchol)
                 <div class="col-lg-4 mb-4">
                     <div class="karticka">
@@ -136,8 +133,6 @@
                                         <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vrchol->id}}">Editovanie príspevku</a>
                                     </div>
                                 </div>
-
-
                             @endif
                         @endauth
                     </div>

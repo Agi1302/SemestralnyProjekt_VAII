@@ -27,4 +27,24 @@ class ControllerFavourite extends Controller
 
         return back();
     }
+
+
+    public function showFavorites()
+    {
+        $user = Auth::user();
+        $favourites = $user->favourites;
+
+        if($favourites == null) {
+            $favourites = [];
+        }
+
+        return view('viewOblubene', compact('favourites'));
+    }
+
+
+
+
+
+
+
 }

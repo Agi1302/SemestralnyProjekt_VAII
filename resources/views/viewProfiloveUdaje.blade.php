@@ -14,7 +14,7 @@
         <!-- Položky menu -->
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link text-white">
+                <a href="/oblubenePrispevky" class="nav-link text-white">
                     <i class="bi bi-heart-fill"></i> Oblúbené
                 </a>
             </li>

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ControllerFavourite;
+use App\Http\Controllers\ControllerFavourite as ControllerFavouriteAlias;
 use App\Http\Controllers\ControllerPrihlasenie;
 use App\Http\Controllers\controllerRegistracia;
 use App\Http\Controllers\ControllerVrchol;
@@ -54,6 +54,18 @@ Route::get('/zmenaHesla', function () {
     return view('viewProfiloveUdajeZmenaHesla');
 });
 
+
+Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
+
+
+
+
+
+
+
+
+
+
 Route::get('/viewEditovaniePrispevku/{id}', [ControllerVrchol::class, 'editacia']);
 
 
@@ -64,6 +76,10 @@ Route::get('/upravenieDatabazy', function () {
 
 Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 Route::get('/', [ControllerVrchol::class, "ziskanieVrcholov"]);
+Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorites"]);
+
+
+
 
 
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
@@ -72,7 +88,7 @@ Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcho
 Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu'])->name('vrcholyEditacia');
 
 
-Route::post('/favourite/pridanieOdobranieFavourite/{vrchol}', [ControllerFavourite::class, 'pridanieOdobranieFavourite'])->name('favourite.pridanieOdobranieFavourite');
+Route::post('/favourite/pridanieOdobranieFavourite/{vrchol}', [ControllerFavouriteAlias::class, 'pridanieOdobranieFavourite'])->name('favourite.pridanieOdobranieFavourite');
 Route::delete('/vrchol/{id}', [ControllerVrchol::class, 'destroy']);
 
 

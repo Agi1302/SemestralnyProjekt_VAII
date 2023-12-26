@@ -23,14 +23,15 @@ body {
 .navigacnyPanelInfo{
     font-size: 1.2rem;
     background-color: rgba(33, 73, 87, 0);
-    margin-top: 15rem;
-    margin-left: 6rem;
+    margin-top: 5rem;
+    margin-left: 3rem;
+
 }
 
 .navigacnyPanelInfo2{
     font-size: 1.2rem;
     background-color: rgba(33, 73, 87, 0);
-    margin-top: 15rem;
+    margin-top: 10rem;
     margin-left: -5.4rem;
 }
 
@@ -74,4 +75,15 @@ body {
     border-radius: 10px;
 }
 
+.oblubeneKarticky{
+    background-color: rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    padding: 20px; /* vnútorný okraj */
+    margin: 10rem 0 -10rem 0; /* vonkajší okraj */
+
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 

@@ -104,7 +104,6 @@
                                 <button type="submit" class="srdiecko">
 
                                         <i class="bi bi-heart"></i>
-
                                 </button>
                             @endauth
                         </form>

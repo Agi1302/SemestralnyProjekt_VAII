@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControllerChaty;
 use App\Http\Controllers\ControllerFavourite as ControllerFavouriteAlias;
 use App\Http\Controllers\ControllerPrihlasenie;
 use App\Http\Controllers\controllerRegistracia;
@@ -85,6 +86,11 @@ Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorite
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
+
+Route::post('/pridajPrispevokChaty', [ControllerChaty::class, 'store']);
+
+
+
 Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu'])->name('vrcholyEditacia');
 
 

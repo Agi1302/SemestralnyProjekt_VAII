@@ -10,7 +10,6 @@
     @endif
 
 
-
     <link rel="stylesheet" href="{{ asset('css/stylUpravaDatabazy.css') }}">
 
     <div class="container ">
@@ -112,6 +111,11 @@
                     <div class="form-group">
                         <label for="obrazok">Obrázok:</label>
                         <label for="obrazok"></label><input type="text" class="form-control" id="obrazok" name="obrazok" placeholder='URL obrázka'>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="obrazok">URL_Obrazka:</label>
+                        <label for="obrazok"></label><input type="text" class="form-control" id="url" name="url" placeholder='URL obrázka'>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">

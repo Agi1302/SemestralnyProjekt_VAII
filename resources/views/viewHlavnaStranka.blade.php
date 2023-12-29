@@ -102,12 +102,14 @@
                             @csrf
                             @auth
                                 <button type="submit" class="srdiecko">
-
+                                    @if($vrchol->liked_by_user)
+                                        <i class="bi bi-heart" style="color: red"></i>
+                                    @else
                                         <i class="bi bi-heart"></i>
+                                    @endif
                                 </button>
                             @endauth
                         </form>
-
 
                         <p class="mt-2 kartickaNadpisy">{{$vrchol->nazov_vrchola}}</p>
                         <img src="{{asset('Obrazky/Vrcholy/'.$vrchol->obrazok)}}" class="img-fluid" alt="Popis">

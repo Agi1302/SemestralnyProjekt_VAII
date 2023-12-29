@@ -16,5 +16,6 @@ class Chata extends Model
         'nazov',
         'text',
         'obrazok',
+        'url',
     ];
 }

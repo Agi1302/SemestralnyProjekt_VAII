@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chata;
-use App\Models\Vrchol;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ControllerChaty extends Controller
 {
     public function index()
     {
-        $chaty = Vrchol::all();
+        $chaty = Chata::all();
 
-        return view('viewChaty', ['chaty' => $chaty]);
+
+        return view('viewChaty', compact('chaty'));
     }
+
 
     public function store(Request $request)
     {
@@ -23,11 +23,13 @@ class ControllerChaty extends Controller
             'nazov' => 'required|max:200',
             'text' => 'required|max:1000',
             'obrazok' => 'required|max:200',
+            'url' => 'required|max:1000',
         ],
             [
                 'nazov.max' => 'Obrazok môže mať maximálne 200 znakov',
                 'text.max' => 'Položka text vrcholu je povinná, maximalny pocet prekroceny',
                 'obrazok.max' => 'Obrazok môže mať maximálne 200 znakov',
+                'url.max' => 'URL môže mať maximálne 1000 znakov',
             ]);
 
         $chata = new Chata;
@@ -36,6 +38,7 @@ class ControllerChaty extends Controller
 
         $chata->text = $validatedData['text'];
         $chata->obrazok = $validatedData['obrazok'];
+        $chata->url = $validatedData['url'];
         try {
             $chata->save();
             session()->flash('status', 'Príspevok bol pridaný');
@@ -45,25 +48,27 @@ class ControllerChaty extends Controller
 
         }
 
-        return redirect("/chaty");
+        return redirect("/upravenieDatabazy");
     }
 
     public function create()
     {
-        return view('viewChaty');
+        $chaty = Chata::all();
+        return view('viewChaty', ['chaty' => $chaty]);
     }
 
 
 
+
     public function ziskanieChat() {
-        $chaty = Vrchol::all();
+        $chaty = Chata::all();
         return view('viewChaty', compact('chaty'));
     }
 
 
     public function destroy($id)
     {
-        $chata = Vrchol::find($id);
+        $chata = Chata::find($id);
 
         if ($chata) {
             $chata->delete();
@@ -79,8 +84,9 @@ class ControllerChaty extends Controller
 
     public function editacia($id)
     {
-        $chata = Vrchol::find($id);
-        return view('viewChaty', compact('chata'));
+        $chata = Chata::find($id);
+        $chaty = Chata::all();
+        return view('viewChaty', compact('chata', 'chaty'));
     }
 
     public function ulozEditaciu(Request $request)
@@ -90,20 +96,23 @@ class ControllerChaty extends Controller
             'nazov' => 'required|max:200',
             'text' => 'required|max:1000',
             'obrazok' => 'required|max:200',
+            'url' => 'required|max:1000',
         ],
             [
                 'nazov.max' => 'Obrazok môže mať maximálne 200 znakov',
                 'text.max' => 'Položka text vrcholu je povinná, maximalny pocet prekroceny',
                 'obrazok.max' => 'Obrazok môže mať maximálne 200 znakov',
+                'url.max' => 'URL môže mať maximálne 1000 znakov',
             ]);
 
 
-        $chata = Vrchol::find($request->id);
+        $chata = Chata::find($request->id);
 
         if($chata) {
             $chata->nazov = $validatedData['nazov'];
             $chata->text = $validatedData['text'];
             $chata->obrazok = $validatedData['obrazok'];
+            $chata->url = $validatedData['url'];
             try {
                 $chata->save();
                 session()->flash('status', 'Príspevok bol editovaný');

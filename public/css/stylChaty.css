@@ -1,0 +1,41 @@
+#navbarNavDropdown.collapsing .navbar-nav,
+#navbarNavDropdown.show .navbar-nav {
+    background: #037582;
+    padding: 12px;
+}
+
+.obrazokLoga {
+    width: 100px;
+}
+
+body {
+    background-image: url("/Obrazky/PozadieChaty.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    height: 100vh;
+}
+
+.odstavec{
+
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.50);
+    padding: 0.9rem;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    position: static;
+    transform: none;
+    margin: auto;
+
+}.prazdnyPosunChatyKarticky{
+    margin-top: 20rem;
+ }
+
+.obrazokChaty{
+    border-radius: 10px;
+}
+
+

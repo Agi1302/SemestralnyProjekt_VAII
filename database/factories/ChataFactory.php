@@ -18,6 +18,7 @@ class ChataFactory extends Factory
             "nazov" => $this->faker->text,
             "text" => $this->faker->text,
             "obrazok" => $this->faker->text,
+            "url" => $this->faker->text,
         ];
     }
 }

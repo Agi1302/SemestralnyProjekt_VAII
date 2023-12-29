@@ -55,7 +55,7 @@
                     <a class="nav-link" href="/">Úvod</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Chaty</a>
+                    <a class="nav-link" href="/viewChaty">Chaty</a>
                 </li>
 
 

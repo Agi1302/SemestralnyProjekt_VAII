@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favourite;
 use App\Models\Vrchol;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ControllerVrchol extends Controller
 {
@@ -14,6 +16,7 @@ class ControllerVrchol extends Controller
 
         return view('viewHlavnaStranka', ['vrcholy' => $vrcholy]);
     }
+
 
     public function store(Request $request)
     {
@@ -162,14 +165,13 @@ class ControllerVrchol extends Controller
 
             }
         }
-        return redirect("/");}
-        public function addFavouritePost(Request $request, Vrchol $vrchol) {
+        return redirect("/");
+    }
+    public function addFavouritePost(Request $request, Vrchol $vrchol) {
         $pouzivatel = Auth::user();
         $pouzivatel->favouritePosts()->attach($vrchol->id);
 
         return back();
 
     }
-
-
 }

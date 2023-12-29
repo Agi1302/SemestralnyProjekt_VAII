@@ -17,10 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/viewChaty', [ControllerChaty::class, 'index']);
 
-Route::get('/chaty', function () {
-    return view('viewChaty');
-});
 
 Route::get('/ferraty', function () {
     return view('viewFerraty');
@@ -57,7 +55,6 @@ Route::get('/zmenaHesla', function () {
 
 
 Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
-
 
 
 

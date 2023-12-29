@@ -13,6 +13,7 @@
     <div class="row vodopad align-items-center">
 
         <div class="col-lg-5 lavyStlpecImg">
+
             <img src="Obrazky/Vodopady/vodopadSutovsky.jpg" class="obrazokLavy" alt="Šutovský vodopád">
         </div>
         <div class="col-lg-7 stlpecSTextom">

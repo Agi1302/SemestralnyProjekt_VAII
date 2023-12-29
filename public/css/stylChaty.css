@@ -17,25 +17,38 @@ body {
     position: relative;
     height: 100vh;
 }
-
 .odstavec{
-
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.50);
-    padding: 0.9rem;
-    width: 80%;
-    top: 50%;
-    left: 50%;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 1rem;
+    width: 90%;
     position: static;
-    transform: none;
     margin: auto;
-
-}.prazdnyPosunChatyKarticky{
-    margin-top: 20rem;
- }
-
-.obrazokChaty{
-    border-radius: 10px;
 }
 
+.prazdnyPosunChatyKarticky{
+    margin-top: 10rem;
+}
 
+.obrazokChaty{
+    border-radius: 30px;
+    height: auto;
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.mapaChaty{
+    border-radius: 2rem;
+    height: 13rem;
+    margin:0rem;
+    padding: 0rem;
+}
+
+.hlavnyNadpisChaty{
+    font-size: 3rem;
+    padding-top: 3rem;
+}
+
+.medzera{
+    margin-top: 1.5rem;
+}

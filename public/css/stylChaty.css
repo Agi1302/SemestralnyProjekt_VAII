@@ -20,11 +20,19 @@ body {
 .odstavec{
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.35);
-    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.6rem;
     width: 90%;
     position: static;
     margin: auto;
 }
+
+@media (min-width: 768px) {
+    .odstavec {
+        width: 60%;
+    }
 
 .prazdnyPosunChatyKarticky{
     margin-top: 10rem;
@@ -45,10 +53,10 @@ body {
 }
 
 .hlavnyNadpisChaty{
-    font-size: 3rem;
+    font-size: 2rem;
     padding-top: 3rem;
 }
 
 .medzera{
-    margin-top: 1.5rem;
+    margin-top: 0.8rem;
 }

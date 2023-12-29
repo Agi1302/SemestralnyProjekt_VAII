@@ -9,10 +9,9 @@
 
     </div>
 
-    <div class="container mt-5">
-        <div class="row justify-content-center odstavec">
+
             @foreach($chaty as $chata)
-                <div class="container">
+                <div class="card mb-3 odstavec">
 
                     <div class="row text-center mb-3 prazdnyPosun"></div>
 
@@ -38,11 +37,7 @@
                     </div>
                 </div>
             @endforeach
-        </div>
-    </div>
-
 @endsection
-
 
 
 

@@ -132,7 +132,34 @@
     </div>
 
 
-
+    <div class="container">
+        <form class="formPridaniaDoDatabazy formPridanieFerraty" method="POST" action="/pridajPrispevokFerraty">
+            @csrf
+            <label class="nadpisTabulky">PRIDANIE PRÍSPEVKU FERRATY</label>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <!-- Prvý stĺpec -->
+                    <div class="form-group">
+                        <label for="nazov_ferraty>">Názov ferraty:</label>
+                        <input type="text" class="form-control" id="nazov" name="nazov" placeholder='Názov ferraty'>
+                    </div>
+                    <div class="form-group">
+                        <label for="obrazok">Obrázok:</label>
+                        <label for="obrazok"></label><input type="text" class="form-control" id="obrazok" name="obrazok" placeholder='URL obrázka'>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group ">
+                        <label for="text">Text:</label>
+                        <label for="textFerraty"></label><input type="text" class="form-control textFerraty" id="text" name="text" placeholder='zadajte text'>
+                    </div>
+                </div>
+            </div>
+            <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">
+                Pridať príspevok
+            </button>
+        </form>
+    </div>
 
 
 

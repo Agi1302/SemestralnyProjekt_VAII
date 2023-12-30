@@ -104,7 +104,17 @@ body {
     margin-top: 2rem;
 }
 
+.formPridanieFerraty{
+    width: 100%;
+    margin-left: 0rem;
+    margin-top: 2rem;
+}
+
 .textChaty{
+    height: 20rem;
+}
+
+.textFerraty{
     height: 20rem;
 }
 

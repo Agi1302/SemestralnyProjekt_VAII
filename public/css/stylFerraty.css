@@ -55,7 +55,7 @@ body {
     background-color: rgba(0, 0, 0, 0.70);
     padding: 0.9rem;
     margin-bottom: 1.8rem;
-    width: 100%;
+    width: 95%;
 }
 
 .full-width-image {
@@ -84,3 +84,11 @@ body {
     width: 100px;
 }
 
+.obrazokFerraty{
+    width: 32rem;
+    height: 17rem;
+    margin-top:  1.5rem;
+    border-radius: 1.5rem;
+}.prazdnyPosunFerratyKarticky {
+    margin-top: 11rem;
+ }

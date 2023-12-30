@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ControllerChaty;
 use App\Http\Controllers\ControllerFavourite as ControllerFavouriteAlias;
+use App\Http\Controllers\ControllerFerraty;
 use App\Http\Controllers\ControllerPrihlasenie;
 use App\Http\Controllers\controllerRegistracia;
 use App\Http\Controllers\ControllerVrchol;
@@ -74,6 +75,7 @@ Route::get('/upravenieDatabazy', function () {
 
 Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 Route::get('/', [ControllerVrchol::class, "ziskanieVrcholov"]);
+Route::get('/ferraty', [ControllerFerraty::class, "ziskanieFerrat"]);
 Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorites"]);
 
 
@@ -85,6 +87,7 @@ Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
 
 Route::post('/pridajPrispevokChaty', [ControllerChaty::class, 'store']);
+Route::post('/pridajPrispevokFerraty', [ControllerFerraty::class, 'store']);
 
 
 

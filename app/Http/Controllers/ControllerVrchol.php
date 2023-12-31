@@ -87,6 +87,28 @@ class ControllerVrchol extends Controller
     }
 
 
+    public function ziskanieVrcholovVysokychTatier() {
+        $vrcholy = Vrchol::where('pohorie', 'Vysoké Tatry')->get();
+        return view('viewHlavnaStranka', compact('vrcholy'));
+    }
+
+    public function ziskanieVrcholovNizkychTatier() {
+        $vrcholy = Vrchol::where('pohorie', 'Nízke Tatry')->get();
+        return view('viewHlavnaStranka', compact('vrcholy'));
+    }
+
+    public function ziskanieVrcholovVelkejFatry() {
+        $vrcholy = Vrchol::where('pohorie', 'Veľká Fatra')->get();
+        return view('viewHlavnaStranka', compact('vrcholy'));
+    }
+
+    public function ziskanieVrcholovMalejFatry() {
+        $vrcholy = Vrchol::where('pohorie', 'Malá Fatra')->get();
+        return view('viewHlavnaStranka', compact('vrcholy'));
+    }
+
+
+
     public function destroy($id)
     {
         $vrchol = Vrchol::find($id);

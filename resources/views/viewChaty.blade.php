@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/stylChaty.css') }}">
 
 
-
+    <h2 class="mt-2 nadpisy">Chaty</h2>
     <div class="prazdnyPosunChatyKarticky">
 
     </div>

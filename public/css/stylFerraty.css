@@ -1,6 +1,6 @@
 #navbarNavDropdown.collapsing .navbar-nav,
 #navbarNavDropdown.show .navbar-nav{
-    background:#037582;
+    background: #1c1919;
     padding:12px;
 }
 
@@ -52,7 +52,7 @@ body {
 
 .odstavec{
     border-radius: 30px; /* zakrivené rohy pre obrázok */
-    background-color: rgba(0, 0, 0, 0.70);
+    background-color: rgba(0, 0, 0, 0.71);
     padding: 0.9rem;
     margin-bottom: 1.8rem;
     width: 95%;
@@ -89,6 +89,7 @@ body {
     height: 17rem;
     margin-top:  1.5rem;
     border-radius: 1.5rem;
+
 }.prazdnyPosunFerratyKarticky {
-    margin-top: 11rem;
+    margin-top: 5rem;
  }

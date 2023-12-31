@@ -5,6 +5,7 @@ use App\Http\Controllers\ControllerFavourite as ControllerFavouriteAlias;
 use App\Http\Controllers\ControllerFerraty;
 use App\Http\Controllers\ControllerPrihlasenie;
 use App\Http\Controllers\controllerRegistracia;
+use App\Http\Controllers\ControllerVodopady;
 use App\Http\Controllers\ControllerVrchol;
 use Illuminate\Support\Facades\Route;
 /*
@@ -76,10 +77,20 @@ Route::get('/upravenieDatabazy', function () {
 Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 Route::get('/', [ControllerVrchol::class, "ziskanieVrcholov"]);
 Route::get('/ferraty', [ControllerFerraty::class, "ziskanieFerrat"]);
+Route::get('/vodopady', [ControllerVodopady::class, "ziskanieVodopadov"]);
+
+
+
+
+//ziskanie turistickejOblasti:
+Route::get('/vrcholyVysokeTatry', [ControllerVrchol::class, "ziskanieVrcholovVysokychTatier"]);
+Route::get('/vrcholyNizkeTatry', [ControllerVrchol::class, "ziskanieVrcholovNizkychTatier"]);
+Route::get('/vrcholyVelkaFatra', [ControllerVrchol::class, "ziskanieVrcholovVelkejFatry"]);
+Route::get('/vrcholyMalaFatra', [ControllerVrchol::class, "ziskanieVrcholovMalejFatry"]);
+
+
+
 Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorites"]);
-
-
-
 
 
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
@@ -88,6 +99,7 @@ Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcho
 
 Route::post('/pridajPrispevokChaty', [ControllerChaty::class, 'store']);
 Route::post('/pridajPrispevokFerraty', [ControllerFerraty::class, 'store']);
+Route::post('/pridajPrispevokVodopady', [ControllerVodopady::class, 'store']);
 
 
 

@@ -39,10 +39,10 @@
                         Turistické oblasti
                     </a>
                     <ul class="dropdown-menu  dropdown-menuHlavnaStranka" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Vysoké Tatry </a></li>
-                        <li><a class="dropdown-item" href="#">Nízke Tatry </a></li>
-                        <li><a class="dropdown-item" href="#">Velká Fatra </a></li>
-                        <li><a class="dropdown-item" href="#">Malá Fatra </a></li>
+                        <li><a class="dropdown-item" href="/vrcholyVysokeTatry">Vysoké Tatry </a></li>
+                        <li><a class="dropdown-item" href="/vrcholyNizkeTatry">Nízke Tatry </a></li>
+                        <li><a class="dropdown-item" href="/vrcholyVelkaFatra">Velká Fatra </a></li>
+                        <li><a class="dropdown-item" href="/vrcholyMalaFatra">Malá Fatra </a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -84,7 +84,7 @@
                            data-bs-toggle="dropdown" aria-expanded="false">
                             {{Auth::user()->meno}}
                         </a>
-                        <ul class="dropdown-menu dropdown-menuHlavnaStranka" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu dropdown-menuHlavnaStranka " aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="/zobrazenieProfilovychUdajov">Profilové údaje</a></li>
 
                             @if(Auth::check() && Auth::user()->meno == 'admin')

@@ -1,13 +1,17 @@
 
 #navbarNavDropdown.collapsing .navbar-nav,
 #navbarNavDropdown.show .navbar-nav {
-    background: #037582;
+    background: rgba(12, 10, 10, 0.58);
     padding: 12px;
 }
 
 .obrazokLoga {
     width: 100px;
 
+}
+
+.dropdown-menu {
+    background: rgba(12, 10, 10, 0.93)
 }
 
 body {
@@ -20,84 +24,36 @@ body {
     height: 100vh;
 }
 
-.prazdnyDivPosun {
-    height: 10rem;
-}
 
-.nadpis {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.obrazokLavy {
-    border-radius: 0 20rem 20rem 0;
-    width: 100%;
-    object-fit: cover;
-}
-
-.obrazokPravy {
-    border-radius: 20rem 0 0 20rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.lavyStlpecImg {
-    /* Pridanie odsadenia na pravú stranu a prepísanie existujúcich štýlov */
-    padding: 0 2rem 0 0;
-}
-
-.pravyStlpecImg {
-    padding: 0 0 0 2rem;
-}
-
-.vodopad {
-    margin-top: 2rem !important;
-}
-
-@media (max-width: 992px) {
-    .vodopad {
-        margin-top: 5rem !important;
-    }
+.prazdnyPosunVodopadyKarticky{
+    margin-top: 3rem;
 }
 
 
-.stlpecSTextom {
-    padding-right: 2rem;
-    padding-left: 2rem;
-}
-
-.zaoblenieRohov {
-    padding: 1rem 2rem 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.6);
+.kartickaVodopad{
+    background-color: rgba(0, 0, 0, 0.68);
     border-radius: 2rem;
 }
 
-* {
-    box-sizing: border-box;
+.lavyObrazok{
+    border-radius: 0 10rem 10rem 0;
+    width: 100%;
+    height: 19rem;
 }
 
-body {
+.pravyObrazok{
+    border-radius: 10rem 0 0 10rem;
+    width: 100%;
+    height: 19rem;
 }
 
-.row {
-    margin: 0;
+.vodopadyContainer{
+    width: 100%;
 }
 
-.custom-padding-right {
+.nadpisVodopady{
+    padding-top: 10rem;
+    text-align: center;
 }
-
-.custom-padding-left {
-}
-
-footer {
-    background-color: #0d2f2c;
-}
-
-
-.dropdown-menuHlavnaStranka {
-    color: white;
-    background-color: rgba(2, 15, 38, 0.62);
-}
-
 
 

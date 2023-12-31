@@ -1,8 +1,13 @@
 #navbarNavDropdown.collapsing .navbar-nav,
 #navbarNavDropdown.show .navbar-nav {
-    background: #037582;
+    background: rgba(12, 10, 10, 0.61);
     padding: 12px;
 }
+.dropdown-menuHlavnaStranka{
+    background-color: rgba(0, 0, 0, 0.70);
+    color: white;
+}
+
 
 .obrazokLoga {
     width: 100px;
@@ -18,8 +23,8 @@ body {
     height: 100vh;
 }
 .odstavec{
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.62);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 0.5rem;
@@ -32,10 +37,16 @@ body {
 @media (min-width: 768px) {
     .odstavec {
         width: 60%;
+
     }
 
+    .mapaChaty {
+        border-radius: 40px;
+    }
+}
+
 .prazdnyPosunChatyKarticky{
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 
 .obrazokChaty{
@@ -46,7 +57,7 @@ body {
 }
 
 .mapaChaty{
-    border-radius: 2rem;
+    border-radius: 40px;
     height: 13rem;
     margin:0rem;
     padding: 0rem;
@@ -58,7 +69,7 @@ body {
 }
 
 .medzera{
-    margin-top: 0.8rem;
+    margin-top: 1.2rem;
 }
 
-}
+

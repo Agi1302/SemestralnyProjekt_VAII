@@ -73,11 +73,11 @@ class ControllerFerraty extends Controller
             $ferrata->delete();
 
             session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
-            return redirect("/");
+            return redirect("/ferraty");
         } else {
 
             session()->flash('neUspesneZmazaniePrispevku', 'Príspevok sa nepodarilo odstrániť');
-            return redirect("/");
+            return redirect("/ferraty");
         }
     }
 

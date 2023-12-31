@@ -55,29 +55,40 @@ Route::get('/zmenaHesla', function () {
     return view('viewProfiloveUdajeZmenaHesla');
 });
 
-
-Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
-
-
-
-
-
-
-
-
-
-Route::get('/viewEditovaniePrispevku/{id}', [ControllerVrchol::class, 'editacia']);
-
-
-
 Route::get('/upravenieDatabazy', function () {
     return view('viewUpravenieDatabazy');
 });
 
-Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
+
+Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
+Route::get('/viewEditovaniePrispevku/{id}', [ControllerVrchol::class, 'editacia']);
+
+
+//pridavanie prispevkov             --CREATE
+Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
+Route::post('/pridajPrispevokChaty', [ControllerChaty::class, 'store']);
+Route::post('/pridajPrispevokFerraty', [ControllerFerraty::class, 'store']);
+Route::post('/pridajPrispevokVodopady', [ControllerVodopady::class, 'store']);
+
+
+//vypisyKarticiek                   --READ--
 Route::get('/', [ControllerVrchol::class, "ziskanieVrcholov"]);
 Route::get('/ferraty', [ControllerFerraty::class, "ziskanieFerrat"]);
 Route::get('/vodopady', [ControllerVodopady::class, "ziskanieVodopadov"]);
+
+
+//editovanie prispevkov             --UPDATE--
+Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu'])->name('vrcholyEditacia');
+//1
+//2
+//3
+
+
+//mazanie prispevkov                --DELETE--
+Route::delete('/vrchol/{id}', [ControllerVrchol::class, 'destroy']);
+Route::delete('/ferrata/{id}', [ControllerFerraty::class, 'destroy']);
+Route::delete('/chata/{id}', [ControllerChaty::class, 'destroy']);
+Route::delete('/vodopad/{id}', [ControllerVodopady::class, 'destroy']);
 
 
 
@@ -89,25 +100,20 @@ Route::get('/vrcholyVelkaFatra', [ControllerVrchol::class, "ziskanieVrcholovVelk
 Route::get('/vrcholyMalaFatra', [ControllerVrchol::class, "ziskanieVrcholovMalejFatry"]);
 
 
+//ziskanie oblubenych prispevkov
 
-Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorites"]);
 
-
+//prihlasovacie vecicky
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
-Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
-
-Route::post('/pridajPrispevokChaty', [ControllerChaty::class, 'store']);
-Route::post('/pridajPrispevokFerraty', [ControllerFerraty::class, 'store']);
-Route::post('/pridajPrispevokVodopady', [ControllerVodopady::class, 'store']);
+Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 
 
 
-Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu'])->name('vrcholyEditacia');
 
 
+//oblubene prispevky
 Route::post('/favourite/pridanieOdobranieFavourite/{vrchol}', [ControllerFavouriteAlias::class, 'pridanieOdobranieFavourite'])->name('favourite.pridanieOdobranieFavourite');
-Route::delete('/vrchol/{id}', [ControllerVrchol::class, 'destroy']);
-
+Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorites"]);
 
 

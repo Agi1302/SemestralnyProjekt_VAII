@@ -22,12 +22,33 @@
                         </div>
                         <div class="col-lg-7 stlpecSTextom kartickaVodopad">
                             <div>
-                                <h2 class="mt-2 nadpisVodopadyKarticky">{{ $vodopad->nazov}}</h2>
+                                <h2 class="mt-2 nadpisVodopadyKarticky">{{$vodopad->nazov}}</h2>
 
-                                <p> {{ $vodopad->text}}</p>
+                                <p> {{$vodopad->text}}</p>
                             </div>
+
+                            @auth
+                                @if(Auth::user()->email == "adminadmin@gmail.com")
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-6">
+                                            <form method="POST" action="/vodopad/{{ $vodopad->id }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
+                                            </form>
+                                        </div>
+
+                                        <div class="col-lg-6 mb-6">
+                                            <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vodopad->id}}">Editovanie príspevku</a>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endauth
+
                         </div>
                     </div>
+
+
                 @endif
 
                 @if($index % 2 == 1)
@@ -36,18 +57,36 @@
                         <div class="col-lg-7 stlpecSTextom kartickaVodopad">
                             <div class="zaoblenieRohov">
                                 <h2 class="mt-2 nadpisVodopadyKarticky">{{ $vodopad->nazov}}</h2>
-
                                 <p> {{ $vodopad->text}}</p>
-
                             </div>
+
+                            @auth
+                                @if(Auth::user()->email == "adminadmin@gmail.com")
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-6">
+                                            <form method="POST" action="/vodopad/{{ $vodopad->id }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
+                                            </form>
+                                        </div>
+
+                                        <div class="col-lg-6 mb-6">
+                                            <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vodopad->id}}">Editovanie príspevku</a>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endauth
+
+
                         </div>
 
                         <div class="col-lg-5 ">
                             <img src="{{asset($vodopad->obrazok)}}" class="img-fluid obrazokFerraty pravyObrazok" alt="Popis">
-
                         </div>
-
                     </div>
+
+
 
                 @endif
             </div>

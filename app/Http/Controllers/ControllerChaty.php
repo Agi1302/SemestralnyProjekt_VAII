@@ -74,11 +74,11 @@ class ControllerChaty extends Controller
             $chata->delete();
 
             session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
-            return redirect("/");
+            return redirect("/viewChaty");
         } else {
 
             session()->flash('neUspesneZmazaniePrispevku', 'Príspevok sa nepodarilo odstrániť');
-            return redirect("/");
+            return redirect("/viewChaty");
         }
     }
 

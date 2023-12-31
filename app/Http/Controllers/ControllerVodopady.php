@@ -73,11 +73,11 @@ class ControllerVodopady extends Controller
             $vodopad->delete();
 
             session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
-            return redirect("/");
+            return redirect("/vodopady");
         } else {
 
             session()->flash('neUspesneZmazaniePrispevku', 'Príspevok sa nepodarilo odstrániť');
-            return redirect("/");
+            return redirect("/vodopady");
         }
     }
 

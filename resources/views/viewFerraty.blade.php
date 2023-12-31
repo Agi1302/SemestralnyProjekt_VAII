@@ -27,8 +27,25 @@
                                 <p> {{ $ferrata->text}}</p>
                             </div>
                         </div>
-                    </div>
 
+                        @auth
+                            @if(Auth::user()->email == "adminadmin@gmail.com")
+                                <div class="row">
+                                    <div class="col-lg-6 mb-6">
+                                        <form method="POST" action="/ferrata/{{ $ferrata->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
+                                        </form>
+                                    </div>
+
+                                    <div class="col-lg-6 mb-6">
+                                        <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$ferrata->id}}">Editovanie príspevku</a>
+                                    </div>
+                                </div>
+                            @endif
+                        @endauth
+                    </div>
                @endif
 
                 @if($index % 3 == 1)
@@ -44,8 +61,25 @@
                             <img src="{{asset('Obrazky/Ferraty/'.$ferrata->obrazok)}}" class="img-fluid obrazokFerraty" alt="Popis">
                         </div>
 
-                    </div>
+                        @auth
+                            @if(Auth::user()->email == "adminadmin@gmail.com")
+                                <div class="row">
+                                    <div class="col-lg-6 mb-6">
+                                        <form method="POST" action="/ferrata/{{ $ferrata->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
+                                        </form>
+                                    </div>
 
+                                    <div class="col-lg-6 mb-6">
+                                        <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$ferrata->id}}">Editovanie príspevku</a>
+                                    </div>
+                                </div>
+                            @endif
+                        @endauth
+
+                    </div>
                 @endif
 
             @if($index % 3 == 2)
@@ -66,15 +100,32 @@
                         <img src="{{asset('Obrazky/Ferraty/'.$ferrata->obrazok)}}" class="img-fluid obrazokFerraty" alt="Popis">
                     </div>
 
-                </div>
+                    @auth
+                        @if(Auth::user()->email == "adminadmin@gmail.com")
+                            <div class="row">
+                                <div class="col-lg-6 mb-6">
+                                    <form method="POST" action="/ferrata/{{ $ferrata->id }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100">Zmazať príspevok</button>
+                                    </form>
+                                </div>
 
+                                <div class="col-lg-6 mb-6">
+                                    <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$ferrata->id}}">Editovanie príspevku</a>
+                                </div>
+                            </div>
+                        @endif
+                    @endauth
+                </div>
             @endif
+
 
 
         </div>
     @endforeach
-    </div>
-    @endsection
+</div>
+@endsection
 
 
 

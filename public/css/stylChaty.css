@@ -72,4 +72,24 @@ body {
     margin-top: 1.2rem;
 }
 
+.aplikovatTlac{
+    background-color: rgba(0, 0, 0, 0.16);
+    border-color: black;
+    border-radius: 0.9rem;
+}
 
+
+.aplikovatTlac:hover {
+    background-color: white;
+    color: #0c0a0a;
+}
+
+.aplikovatTlac:after {
+    background-color: #0c0a0a;
+    color: white;
+}
+
+.aplikovatTlac:active {
+    background-color: #0c0a0a;
+    color: white;
+}

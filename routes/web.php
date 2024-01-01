@@ -20,19 +20,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/ferraty', function () {
-    return view('viewFerraty');
+    return view('hlavne.viewFerraty');
 });
 
 Route::get('/chaty', function () {
-    return view('viewChaty');
+    return view('hlavne.viewChaty');
 });
 
 Route::get('/forum', function () {
-    return view('viewForum');
+    return view('hlavne.vseobecne.viewForum');
 });
 
 Route::get('/prihlasenie', function () {
-    return view('viewPrihlasenie');
+    return view('hlavne.viewPrihlasenie');
 });
 
 Route::get('/registracia', function () {
@@ -40,19 +40,19 @@ Route::get('/registracia', function () {
 });
 
 Route::get('/vodopady', function () {
-    return view('viewVodopady');
+    return view('hlavne.viewVodopady');
 });
 
 Route::get('/zobrazenieProfilovychUdajov', function () {
-    return view('viewProfiloveUdaje');
+    return view('hlavne.uzivatel.viewProfiloveUdaje');
 });
 
 Route::get('/zmenaNastaveni', function () {
-    return view('viewProfiloveUdajeNastavenia');
+    return view('hlavne.uzivatel.viewProfiloveUdajeNastavenia');
 });
 
 Route::get('/zmenaHesla', function () {
-    return view('viewProfiloveUdajeZmenaHesla');
+    return view('hlavne.uzivatel.viewProfiloveUdajeZmenaHesla');
 });
 
 Route::get('/upravenieDatabazy', function () {
@@ -61,7 +61,9 @@ Route::get('/upravenieDatabazy', function () {
 
 
 Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
-Route::get('/viewEditovaniePrispevku/{id}', [ControllerVrchol::class, 'editacia']);
+
+//zobrazenieEditovaciehoview
+Route::get('/viewEditovaniePrispevkuVrcholu/{id}', [ControllerVrchol::class, 'editacia']);
 
 
 //pridavanie prispevkov             --CREATE
@@ -80,9 +82,9 @@ Route::get('/chaty', [ControllerChaty::class, "ziskanieChat"]);
 
 //editovanie prispevkov             --UPDATE--
 Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu']);
-Route::post('/ferratyEditacia', [ControllerFerraty::class, 'ulozEditaciu'])->name('ferratyEditacia');
-Route::post('/vodopadyEditacia', [ControllerVodopady::class, 'ulozEditaciu'])->name('vodopadyEditacia');
-Route::post('/chatyEditacia', [ControllerChaty::class, 'ulozEditaciu'])->name('chaatyEditacia');
+//Route::post('/ferratyEditacia', [ControllerFerraty::class, 'ulozEditaciu'])->name('ferratyEditacia');
+//Route::post('/vodopadyEditacia', [ControllerVodopady::class, 'ulozEditaciu'])->name('vodopadyEditacia');
+//Route::post('/chatyEditacia', [ControllerChaty::class, 'ulozEditaciu'])->name('chaatyEditacia');
 
 
 //mazanie prispevkov                --DELETE--

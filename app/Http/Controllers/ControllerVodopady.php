@@ -12,7 +12,7 @@ class ControllerVodopady extends Controller
         $vodopady = Vodopad::all();
 
 
-        return view('viewVodopady', compact('vodopady'));
+        return view('hlavne.viewVodopady', compact('vodopady'));
     }
 
 
@@ -51,7 +51,7 @@ class ControllerVodopady extends Controller
     public function create()
     {
         $vodopady = Vodopad::all();
-        return view('viewVodopady', ['vodopady' => $vodopady]);
+        return view('hlavne.viewVodopady', ['vodopady' => $vodopady]);
     }
 
 
@@ -61,7 +61,7 @@ class ControllerVodopady extends Controller
 
     public function ziskanieVodopadov() {
         $vodopady = Vodopad::all();
-        return view('viewVodopady', compact('vodopady'));
+        return view('hlavne.viewVodopady', compact('vodopady'));
     }
 
 
@@ -85,7 +85,7 @@ class ControllerVodopady extends Controller
     {
         $vodopad = Vodopad::find($id);
         $vodopady = Vodopad::all();
-        return view('viewVodopady', compact('vodopad', 'vodopady'));
+        return view('hlavne.viewVodopady', compact('vodopad', 'vodopady'));
     }
 
     public function ulozEditaciu(Request $request)

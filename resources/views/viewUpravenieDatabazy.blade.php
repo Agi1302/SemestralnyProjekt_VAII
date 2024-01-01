@@ -94,9 +94,6 @@
     </div>
 
 
-
-
-
     <div class="container">
         <form class="formPridaniaDoDatabazy formPridanieChaty" method="POST" action="/pridajPrispevokChaty">
             @csrf
@@ -190,9 +187,6 @@
             </button>
         </form>
     </div>
-
-
-
 
 @endsection
 

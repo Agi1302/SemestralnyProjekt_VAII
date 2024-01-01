@@ -14,7 +14,7 @@ class ControllerVrchol extends Controller
     {
         $vrcholy = Vrchol::all();
 
-        return view('viewHlavnaStranka', ['vrcholy' => $vrcholy]);
+        return view('hlavne.viewHlavnaStranka', ['vrcholy' => $vrcholy]);
     }
 
 
@@ -83,28 +83,28 @@ class ControllerVrchol extends Controller
 
     public function ziskanieVrcholov() {
         $vrcholy = Vrchol::all();
-        return view('viewHlavnaStranka', compact('vrcholy'));
+        return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
 
     public function ziskanieVrcholovVysokychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Vysoké Tatry')->get();
-        return view('viewHlavnaStranka', compact('vrcholy'));
+        return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovNizkychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Nízke Tatry')->get();
-        return view('viewHlavnaStranka', compact('vrcholy'));
+        return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovVelkejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Veľká Fatra')->get();
-        return view('viewHlavnaStranka', compact('vrcholy'));
+        return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovMalejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Malá Fatra')->get();
-        return view('viewHlavnaStranka', compact('vrcholy'));
+        return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
 
@@ -128,7 +128,7 @@ class ControllerVrchol extends Controller
     public function editacia($id)
     {
         $vrchol = Vrchol::find($id);
-        return view('viewEditovaniePrispevku', compact('vrchol'));
+        return view('viewEditovaniePrispevkuVrcholu', compact('vrchol'));
     }
 
     public function ulozEditaciu(Request $request)

@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-    <link rel="stylesheet" href="{{ asset('css/stylUpravaDatabazy.css') }}">
+<link rel="stylesheet" href="{{ asset('css/stylUpravaDatabazy.css') }}">
 
 
     <div class="container ">
-        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="/pridajPrispevokChaty">
+        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="/vrcholyEditacia">
             @csrf
             <input type="hidden" name="id" value="{{$vrchol->id}}">
-            <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU</label>
+            <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU VRCHOLU</label>
             <div class="row">
                 <div class="col-lg-6">
                     <!-- Prvý stĺpec -->
@@ -73,6 +73,12 @@
                         </select>
                     </div>
 
+
+                    <div class="form-group">
+                        <label for="obrazok">Obrázok:</label>
+                        <input type="text" class="form-control" id="obrazok" name="obrazok" placeholder='obrazok' value="{{$vrchol->obrazok}}">
+                    </div>
+
                 </div>
             </div>
             <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">
@@ -80,59 +86,4 @@
             </button>
         </form>
     </div>
-
-
-{{--    --}}{{----------------------------CHATY------------------------}}
-{{--    <div class="container">--}}
-{{--        <form class="formPridaniaDoDatabazy formPridanieChaty" method="POST" action="/pridajPrispevokChaty">--}}
-{{--            @csrf--}}
-{{--            <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU CHATY</label>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-12 col-md-6">--}}
-{{--                    <!-- Prvý stĺpec -->--}}
-{{--                    <div class="form-group">--}}
-{{--                        <label for="nazov_chaty>">Názov chaty:</label>--}}
-{{--                        <input type="text" class="form-control" id="nazov" name="nazov" placeholder='Názov chaty'>--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <label for="obrazok">Obrázok:</label>--}}
-{{--                        <label for="obrazok"></label><input type="text" class="form-control" id="obrazok" name="obrazok" placeholder='URL obrázka'>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="form-group">--}}
-{{--                        <label for="obrazok">URL_Obrazka:</label>--}}
-{{--                        <label for="obrazok"></label><input type="text" class="form-control" id="url" name="url" placeholder='URL obrázka'>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-12 col-md-6">--}}
-{{--                    <div class="form-group ">--}}
-{{--                        <label for="text">Text:</label>--}}
-{{--                        <label for="textChaty"></label><input type="text" class="form-control textChaty" id="text" name="text" placeholder='zadajte text'>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">--}}
-{{--                Pridať príspevok--}}
-{{--            </button>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endsection

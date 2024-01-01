@@ -12,7 +12,7 @@ class ControllerFerraty extends Controller
         $ferraty = Ferrata::all();
 
 
-        return view('viewFerraty', compact('ferraty'));
+        return view('hlavne.viewFerraty', compact('ferraty'));
     }
 
 
@@ -51,7 +51,7 @@ class ControllerFerraty extends Controller
     public function create()
     {
         $ferraty = Ferrata::all();
-        return view('viewFerraty', ['ferraty' => $ferraty]);
+        return view('hlavne.viewFerraty', ['ferraty' => $ferraty]);
     }
 
 
@@ -61,7 +61,7 @@ class ControllerFerraty extends Controller
 
     public function ziskanieFerrat() {
         $ferraty = Ferrata::all();
-        return view('viewFerraty', compact('ferraty'));
+        return view('hlavne.viewFerraty', compact('ferraty'));
     }
 
 
@@ -85,7 +85,7 @@ class ControllerFerraty extends Controller
     {
         $ferrata = Ferrata::find($id);
         $ferraty = Ferrata::all();
-        return view('viewFerraty', compact('ferrata', 'ferraty'));
+        return view('hlavne.viewFerraty', compact('ferrata', 'ferraty'));
     }
 
     public function ulozEditaciu(Request $request)

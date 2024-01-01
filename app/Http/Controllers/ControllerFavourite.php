@@ -38,7 +38,7 @@ class ControllerFavourite extends Controller
             $favourites = [];
         }
 
-        return view('viewOblubene', compact('favourites'));
+        return view('hlavne.uzivatel.viewOblubene', compact('favourites'));
     }
 
 

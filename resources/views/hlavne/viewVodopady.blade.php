@@ -39,7 +39,7 @@
                                         </div>
 
                                         <div class="col-lg-6 mb-6">
-                                            <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vodopad->id}}">Editovanie príspevku</a>
+                                            <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevkuVodopady/'.$vodopad->id}}">Editovanie príspevku</a>
                                         </div>
                                     </div>
                                 @endif

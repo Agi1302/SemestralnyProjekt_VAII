@@ -85,7 +85,7 @@
                             {{Auth::user()->meno}}
                         </a>
                         <ul class="dropdown-menu dropdown-menuHlavnaStranka " aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/zobrazenieProfilovychUdajov">Profilové údaje</a></li>
+                            <li><a class="dropdown-item" href="/oblubenePrispevky">Profilové údaje</a></li>
 
                             @if(Auth::check() && Auth::user()->meno == 'admin')
                                 <li><a class="dropdown-item" href="/upravenieDatabazy">Pridaj príspevok</a></li>

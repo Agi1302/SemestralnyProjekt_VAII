@@ -12,7 +12,7 @@ class ControllerChaty extends Controller
         $chaty = Chata::all();
 
 
-        return view('viewChaty', compact('chaty'));
+        return view('hlavne.viewChaty', compact('chaty'));
     }
 
 
@@ -54,7 +54,7 @@ class ControllerChaty extends Controller
     public function create()
     {
         $chaty = Chata::all();
-        return view('viewChaty', ['chaty' => $chaty]);
+        return view('hlavne.viewChaty', ['chaty' => $chaty]);
     }
 
 
@@ -62,7 +62,7 @@ class ControllerChaty extends Controller
 
     public function ziskanieChat() {
         $chaty = Chata::all();
-        return view('viewChaty', compact('chaty'));
+        return view('hlavne.viewChaty', compact('chaty'));
     }
 
 
@@ -86,7 +86,7 @@ class ControllerChaty extends Controller
     {
         $chata = Chata::find($id);
         $chaty = Chata::all();
-        return view('viewChaty', compact('chata', 'chaty'));
+        return view('hlavne.viewChaty', compact('chata', 'chaty'));
     }
 
     public function ulozEditaciu(Request $request)

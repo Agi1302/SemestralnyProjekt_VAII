@@ -12,7 +12,6 @@
 
             @foreach($chaty as $chata)
                 <div class="card mb-3 odstavec">
-
                     <div class="row text-center mb-3 prazdnyPosun"></div>
 
                     <div class="row">
@@ -53,8 +52,6 @@
                             </div>
                         @endif
                     @endauth
-
-
                 </div>
             @endforeach
 @endsection

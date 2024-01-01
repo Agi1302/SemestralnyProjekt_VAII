@@ -5,7 +5,7 @@
 
 
     <div class="container ">
-        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="{{ route('vrcholyEditacia') }}">
+        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="/pridajPrispevokChaty">
             @csrf
             <input type="hidden" name="id" value="{{$vrchol->id}}">
             <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU</label>
@@ -22,9 +22,9 @@
                     </div>
                     <div class="form-group">
                         <label for="region">Okres:</label>
-                        <input type="text" class="form-control" id="okres" name="okres" placeholder='názov okresu' value={{$vrchol->okres}}">
+                        <label for="okres"></label><input type="text" class="form-control" id="okres" name="okres" placeholder='názov okresu' value="{{$vrchol->okres}}">
                     </div>
-                    <div class="form-group">
+                    <div class=" form-group">
                         <label for="nadmorska_vyska_vrcholu">Nadmorská výška vrcholu:</label>
                         <input type="text" class="form-control" id="nadmorska_vyska" name="nadmorska_vyska" placeholder='m.n.m' value="{{$vrchol->nadmorska_vyska}}">
                     </div>
@@ -80,6 +80,57 @@
             </button>
         </form>
     </div>
+
+
+{{--    --}}{{----------------------------CHATY------------------------}}
+{{--    <div class="container">--}}
+{{--        <form class="formPridaniaDoDatabazy formPridanieChaty" method="POST" action="/pridajPrispevokChaty">--}}
+{{--            @csrf--}}
+{{--            <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU CHATY</label>--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12 col-md-6">--}}
+{{--                    <!-- Prvý stĺpec -->--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="nazov_chaty>">Názov chaty:</label>--}}
+{{--                        <input type="text" class="form-control" id="nazov" name="nazov" placeholder='Názov chaty'>--}}
+{{--                    </div>--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="obrazok">Obrázok:</label>--}}
+{{--                        <label for="obrazok"></label><input type="text" class="form-control" id="obrazok" name="obrazok" placeholder='URL obrázka'>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="form-group">--}}
+{{--                        <label for="obrazok">URL_Obrazka:</label>--}}
+{{--                        <label for="obrazok"></label><input type="text" class="form-control" id="url" name="url" placeholder='URL obrázka'>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-12 col-md-6">--}}
+{{--                    <div class="form-group ">--}}
+{{--                        <label for="text">Text:</label>--}}
+{{--                        <label for="textChaty"></label><input type="text" class="form-control textChaty" id="text" name="text" placeholder='zadajte text'>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">--}}
+{{--                Pridať príspevok--}}
+{{--            </button>--}}
+{{--        </form>--}}
+{{--    </div>--}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

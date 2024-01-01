@@ -19,11 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/viewChaty', [ControllerChaty::class, 'index']);
-
-
 Route::get('/ferraty', function () {
     return view('viewFerraty');
+});
+
+Route::get('/chaty', function () {
+    return view('viewChaty');
 });
 
 Route::get('/forum', function () {
@@ -46,7 +47,6 @@ Route::get('/zobrazenieProfilovychUdajov', function () {
     return view('viewProfiloveUdaje');
 });
 
-
 Route::get('/zmenaNastaveni', function () {
     return view('viewProfiloveUdajeNastavenia');
 });
@@ -65,7 +65,7 @@ Route::get('/viewEditovaniePrispevku/{id}', [ControllerVrchol::class, 'editacia'
 
 
 //pridavanie prispevkov             --CREATE
-Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store'])->name('vrcholy.store');
+Route::post('/pridajPrispevok', [ControllerVrchol::class, 'store']);
 Route::post('/pridajPrispevokChaty', [ControllerChaty::class, 'store']);
 Route::post('/pridajPrispevokFerraty', [ControllerFerraty::class, 'store']);
 Route::post('/pridajPrispevokVodopady', [ControllerVodopady::class, 'store']);
@@ -75,13 +75,14 @@ Route::post('/pridajPrispevokVodopady', [ControllerVodopady::class, 'store']);
 Route::get('/', [ControllerVrchol::class, "ziskanieVrcholov"]);
 Route::get('/ferraty', [ControllerFerraty::class, "ziskanieFerrat"]);
 Route::get('/vodopady', [ControllerVodopady::class, "ziskanieVodopadov"]);
+Route::get('/chaty', [ControllerChaty::class, "ziskanieChat"]);
 
 
 //editovanie prispevkov             --UPDATE--
-Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu'])->name('vrcholyEditacia');
-//1
-//2
-//3
+Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu']);
+Route::post('/ferratyEditacia', [ControllerFerraty::class, 'ulozEditaciu'])->name('ferratyEditacia');
+Route::post('/vodopadyEditacia', [ControllerVodopady::class, 'ulozEditaciu'])->name('vodopadyEditacia');
+Route::post('/chatyEditacia', [ControllerChaty::class, 'ulozEditaciu'])->name('chaatyEditacia');
 
 
 //mazanie prispevkov                --DELETE--
@@ -89,8 +90,6 @@ Route::delete('/vrchol/{id}', [ControllerVrchol::class, 'destroy']);
 Route::delete('/ferrata/{id}', [ControllerFerraty::class, 'destroy']);
 Route::delete('/chata/{id}', [ControllerChaty::class, 'destroy']);
 Route::delete('/vodopad/{id}', [ControllerVodopady::class, 'destroy']);
-
-
 
 
 //ziskanie turistickejOblasti:

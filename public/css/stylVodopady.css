@@ -29,12 +29,19 @@ body {
     margin-top: 3rem;
 }
 
+.nadpisVodopadyKarticky{
+    text-align: center;
+}
 
 .kartickaVodopad{
     background-color: rgba(0, 0, 0, 0.68);
     border-radius: 2rem;
+    margin-top: 3rem;
 }
 
+.obrazokVodopady{
+    margin-top: 5rem;
+}
 .lavyObrazok{
     border-radius: 0 10rem 10rem 0;
     width: 100%;

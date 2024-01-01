@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/stylUpravaDatabazy.css') }}">
 
     <div class="container ">
-        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="{{ route('vrcholy.store') }}">
+        <form class="formPridaniaDoDatabazy formPridanie" method="POST" action="/pridajPrispevok">
             @csrf
             <label class="nadpisTabulky">PRIDANIE PRÍSPEVKU VRCHOLU</label>
             <div class="row">

@@ -26,7 +26,7 @@
                     </div>
                     <div class=" form-group">
                         <label for="nadmorska_vyska_vrcholu">Nadmorská výška vrcholu:</label>
-                        <input type="text" class="form-control" id="nadmorska_vyska" name="nadmorska_vyska" placeholder='m.n.m' value="{{$vrchol->nadmorska_vyska}}">
+                        <label for="nadmorska_vyska"></label><input type="text" class="form-control" id="nadmorska_vyska" name="nadmorska_vyska" placeholder='m.n.m' value="{{$vrchol->nadmorska_vyska}}">
                     </div>
                     <div class="form-group">
                         <label for="pohorie">Pohorie:</label>
@@ -78,7 +78,6 @@
                         <label for="obrazok">Obrázok:</label>
                         <input type="text" class="form-control" id="obrazok" name="obrazok" placeholder='obrazok' value="{{$vrchol->obrazok}}">
                     </div>
-
                 </div>
             </div>
             <button type="submit"  class="nav-item tlacitkoPridaniePrispevku">

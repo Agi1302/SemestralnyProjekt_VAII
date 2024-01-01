@@ -84,8 +84,7 @@ class ControllerFerraty extends Controller
     public function editacia($id)
     {
         $ferrata = Ferrata::find($id);
-        $ferraty = Ferrata::all();
-        return view('hlavne.viewFerraty', compact('ferrata', 'ferraty'));
+        return view('viewEditovaniePrispevkuFerraty', compact('ferrata'));
     }
 
     public function ulozEditaciu(Request $request)
@@ -118,6 +117,6 @@ class ControllerFerraty extends Controller
 
             }
         }
-        return redirect("/");}
+        return redirect("/ferraty");}
 
 }

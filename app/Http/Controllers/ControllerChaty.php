@@ -85,8 +85,7 @@ class ControllerChaty extends Controller
     public function editacia($id)
     {
         $chata = Chata::find($id);
-        $chaty = Chata::all();
-        return view('hlavne.viewChaty', compact('chata', 'chaty'));
+        return view('viewEditovaniePrispevkuChaty', compact('chata'));
     }
 
     public function ulozEditaciu(Request $request)
@@ -122,6 +121,6 @@ class ControllerChaty extends Controller
 
             }
         }
-        return redirect("/");}
+        return redirect("/chaty");}
 
 }

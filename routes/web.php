@@ -62,8 +62,6 @@ Route::get('/upravenieDatabazy', function () {
 
 Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
 
-//zobrazenieEditovaciehoview
-Route::get('/viewEditovaniePrispevkuVrcholu/{id}', [ControllerVrchol::class, 'editacia']);
 
 
 //pridavanie prispevkov             --CREATE
@@ -80,11 +78,17 @@ Route::get('/vodopady', [ControllerVodopady::class, "ziskanieVodopadov"]);
 Route::get('/chaty', [ControllerChaty::class, "ziskanieChat"]);
 
 
+//zobrazenieEditovaciehoView
+Route::get('/viewEditovaniePrispevkuVrcholu/{id}', [ControllerVrchol::class, 'editacia']);
+Route::get('/viewEditovaniePrispevkuChaty/{id}', [ControllerChaty::class, 'editacia']);
+Route::get('/viewEditovaniePrispevkuFerraty/{id}', [ControllerFerraty::class, 'editacia']);
+Route::get('/viewEditovaniePrispevkuVodopady/{id}', [ControllerVodopady::class, 'editacia']);
+
 //editovanie prispevkov             --UPDATE--
 Route::post('/vrcholyEditacia', [ControllerVrchol::class, 'ulozEditaciu']);
-//Route::post('/ferratyEditacia', [ControllerFerraty::class, 'ulozEditaciu'])->name('ferratyEditacia');
-//Route::post('/vodopadyEditacia', [ControllerVodopady::class, 'ulozEditaciu'])->name('vodopadyEditacia');
-//Route::post('/chatyEditacia', [ControllerChaty::class, 'ulozEditaciu'])->name('chaatyEditacia');
+Route::post('/ferratyEditacia', [ControllerFerraty::class, 'ulozEditaciu']);
+Route::post('/chatyEditacia', [ControllerChaty::class, 'ulozEditaciu']);
+Route::post('/vodopadyEditacia', [ControllerVodopady::class, 'ulozEditaciu']);
 
 
 //mazanie prispevkov                --DELETE--

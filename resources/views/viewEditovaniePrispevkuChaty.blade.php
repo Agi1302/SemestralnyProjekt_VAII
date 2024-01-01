@@ -4,17 +4,17 @@
 <link rel="stylesheet" href="{{ asset('css/stylUpravaDatabazy.css') }}">
 
 
-<div class="container">
-    <form class="formPridaniaDoDatabazy formPridanieChaty" method="POST" action="/pridajPrispevokChaty">
+<div class="container ">
+    <form class="formPridaniaDoDatabazy formPridanieChaty " method="POST" action="/chatyEditacia">
         @csrf
         <input type="hidden" name="id" value="{{$chata->id}}">
-        <label class="nadpisTabulky">EDITVANIE PRÍSPEVKU CHATY</label>
+        <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU CHATY</label>
         <div class="row">
             <div class="col-12 col-md-6">
                 <!-- Prvý stĺpec -->
                 <div class="form-group">
                     <label for="nazov_chaty>">Názov chaty:</label>
-                    <input type="text" class="form-control" id="nazov" name="nazov" placeholder='Názov chaty' value="{{$chata->nazov}}">
+                    <label for="nazov"></label><input type="text" class="form-control" id="nazov" name="nazov" placeholder='Názov chaty' value="{{$chata->nazov}}">
                 </div>
                 <div class="form-group">
                     <label for="obrazok">Obrázok:</label>

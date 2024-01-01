@@ -84,8 +84,7 @@ class ControllerVodopady extends Controller
     public function editacia($id)
     {
         $vodopad = Vodopad::find($id);
-        $vodopady = Vodopad::all();
-        return view('hlavne.viewVodopady', compact('vodopad', 'vodopady'));
+        return view('viewEditovaniePrispevkuVodopadu', compact('vodopad'));
     }
 
     public function ulozEditaciu(Request $request)
@@ -118,6 +117,5 @@ class ControllerVodopady extends Controller
 
             }
         }
-        return redirect("/");}
-
+        return redirect("/vodopady");}
 }

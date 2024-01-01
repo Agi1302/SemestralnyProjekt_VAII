@@ -107,8 +107,16 @@ body {
 .formPridanieFerraty{
     width: 100%;
     margin-left: 0rem;
-    margin-top: 2rem;
+    margin-top: 15rem;
 }
+
+
+.formPridanieChaty{
+   // width: 100%;
+    //margin-left: 0rem;
+    margin-top: 15rem;
+}
+
 
 .textChaty{
     height: 20rem;

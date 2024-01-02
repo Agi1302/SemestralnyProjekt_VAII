@@ -1,0 +1,38 @@
+#navbarNavDropdown.collapsing .navbar-nav,
+#navbarNavDropdown.show .navbar-nav{
+    background: #1c1919;
+    padding:12px;
+}
+
+
+
+body {
+    background-image: url("/Obrazky/Pozadie3.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    height: 100vh;
+}
+
+.obrazokLoga{
+    height: 2rem;
+}.prazdnyPosun{
+    margin-top: 5rem;
+ }
+
+
+ .kartickyOdkazov{
+     background-color: rgba(12, 10, 10, 0.85);
+     border-radius: 3rem;
+ }
+
+ .nadpisKarticiek{
+     color: white;
+    text-align: center;
+ }
+
+ .card-body{
+     margin: 1rem;
+ }

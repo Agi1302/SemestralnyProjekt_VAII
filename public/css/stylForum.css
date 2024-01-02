@@ -1,0 +1,21 @@
+#navbarNavDropdown.collapsing .navbar-nav,
+#navbarNavDropdown.show .navbar-nav{
+    background: #1c1919;
+    padding:12px;
+}
+
+
+
+body {
+    background-image: url("/Obrazky/PozadieFerraty.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    height: 100vh;
+}
+
+.obrazokLoga{
+    height: 2rem;
+}

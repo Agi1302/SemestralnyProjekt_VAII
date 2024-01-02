@@ -84,7 +84,7 @@ class ControllerVodopady extends Controller
     public function editacia($id)
     {
         $vodopad = Vodopad::find($id);
-        return view('viewEditovaniePrispevkuVodopadu', compact('vodopad'));
+        return view('editovaniePrispevkov.viewEditovaniePrispevkuVodopadu', compact('vodopad'));
     }
 
     public function ulozEditaciu(Request $request)

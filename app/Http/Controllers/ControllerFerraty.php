@@ -84,7 +84,7 @@ class ControllerFerraty extends Controller
     public function editacia($id)
     {
         $ferrata = Ferrata::find($id);
-        return view('viewEditovaniePrispevkuFerraty', compact('ferrata'));
+        return view('editovaniePrispevkov.viewEditovaniePrispevkuFerraty', compact('ferrata'));
     }
 
     public function ulozEditaciu(Request $request)

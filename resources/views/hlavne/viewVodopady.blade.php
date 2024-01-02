@@ -15,7 +15,7 @@
                 <div class="row text-center mb-3"></div>
                 @if($index % 2 == 0)
 
-                    <div class="row vodopad align-items-center">
+                    <div class="row vodopad1 align-items-center">
 
                         <div class="col-lg-5 ">
                             <img src="{{asset($vodopad->obrazok)}}" class="img-fluid obrazokVodopady lavyObrazok" alt="Popis">
@@ -52,7 +52,7 @@
                 @endif
 
                 @if($index % 2 == 1)
-                    <div class="row vodopad align-items-center">
+                    <div class="row vodopad2 align-items-center">
 
                         <div class="col-lg-7 stlpecSTextom kartickaVodopad">
                             <div class="zaoblenieRohov">
@@ -72,7 +72,7 @@
                                         </div>
 
                                         <div class="col-lg-6 mb-6">
-                                            <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevku/'.$vodopad->id}}">Editovanie príspevku</a>
+                                            <a type="submit" class="btn btn-primary aplikovatTlac align-content-center w-100 " href="{{'/viewEditovaniePrispevkuVodopady/'.$vodopad->id}}">Editovanie príspevku</a>
                                         </div>
                                     </div>
                                 @endif

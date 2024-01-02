@@ -1,0 +1,117 @@
+#navbarNavDropdown.collapsing .navbar-nav,
+#navbarNavDropdown.show .navbar-nav{
+    background: #1c1919;
+    padding:12px;
+}
+
+
+
+body {
+    background-image: url("/Obrazky/Pozadie_Q&A.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    height: 100vh;
+}
+
+.obrazokLoga{
+    height: 2rem;
+}
+
+
+
+
+.fixed {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+
+@media (min-width: 992px) {
+    .fixed-md {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+.otazkoveOkno{
+    background-color: rgba(4, 32, 47, 0.76);
+    margin-top: 28rem;
+    border-radius: 1rem;
+}
+
+.odpovedoveOkno{
+    background-color: rgba(4, 32, 47, 0.76);
+    margin-top: 28rem;
+    border-radius: 1rem;
+}
+
+.vnutorneOknoFormu{
+    margin: 1rem;
+}
+
+
+.buttonPotvrdenie {
+    margin-bottom: 1rem;
+    background-color: #2b4852;
+    border: white;
+    margin-top: 0.3rem;
+}
+
+.form-control{
+    height: 20rem;
+    background-color: rgba(43, 72, 82, 0.67);
+    margin-top: -1.7rem;
+    color: white;
+
+}
+
+.vlozenieOtazky{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.prazdnyPosun{
+    margin-top: 20rem;
+}
+
+.odstavec1{
+    background-color: rgba(4, 32, 47, 0.76);
+}
+
+.odstavec2{
+    background-color: rgba(43, 72, 82, 0.67);
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: -0.5rem;
+    border-color: white;
+}
+
+.posunTextu{
+    margin-left: 1rem;
+}
+
+.textOdpovede{
+    height: 5rem;
+    background-color: rgba(43, 72, 82, 0.67);
+    margin-top: -0.5rem;
+    margin-left: 0.5rem;
+    color: white;
+    border-color: white;
+    border-radius: 0.3rem;
+    width: 98.5%;
+
+}
+.buttonPotvrdenieOdpovede{
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(33, 73, 87, 0.88);
+    border-color: white;
+}

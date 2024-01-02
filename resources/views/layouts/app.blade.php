@@ -67,9 +67,8 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menuHlavnaStranka" aria-labelledby="navbarDropdownMenuLink">
 
-                        <li><a class="dropdown-item" href="#">Užitočné odkazy</a></li>
-                        <li><a class="dropdown-item" href="#">Fórum</a></li>
-                        <li><a class="dropdown-item" href="#">Q&A</a></li>
+                        <li><a class="dropdown-item" href="/uzitocneOdkazy">Užitočné odkazy</a></li>
+                        <li><a class="dropdown-item" href="/Q&A">Q&A</a></li>
                     </ul>
                 </li>
                 @guest

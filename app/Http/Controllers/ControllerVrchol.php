@@ -128,7 +128,7 @@ class ControllerVrchol extends Controller
     public function editacia($id)
     {
         $vrchol = Vrchol::find($id);
-        return view('viewEditovaniePrispevkuVrcholu', compact('vrchol'));
+        return view('editovaniePrispevkov.viewEditovaniePrispevkuVrcholu', compact('vrchol'));
     }
 
     public function ulozEditaciu(Request $request)

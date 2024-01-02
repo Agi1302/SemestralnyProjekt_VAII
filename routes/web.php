@@ -3,6 +3,7 @@
 use App\Http\Controllers\ControllerChaty;
 use App\Http\Controllers\ControllerFavourite as ControllerFavouriteAlias;
 use App\Http\Controllers\ControllerFerraty;
+use App\Http\Controllers\ControllerOtazky;
 use App\Http\Controllers\ControllerPrihlasenie;
 use App\Http\Controllers\controllerRegistracia;
 use App\Http\Controllers\ControllerVodopady;
@@ -59,9 +60,20 @@ Route::get('/upravenieDatabazy', function () {
     return view('viewUpravenieDatabazy');
 });
 
+Route::get('/uzitocneOdkazy', function () {
+    return view('hlavne.vseobecne.viewUzitocneOdkazy');
+});
+
+Route::get('/Q&A', function () {
+    return view('hlavne.vseobecne.viewQ&A');
+});
+
+Route::get('/Q&A', [ControllerOtazky::class, 'index']);
 
 Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
-
+//Q&A
+Route::post('/pridajOtazku', [ControllerOtazky::class, 'store']);
+Route::post('/editujOtazku/{id}', [ControllerOtazky::class, 'pridajOdpoved']);
 
 
 //pridavanie prispevkov             --CREATE

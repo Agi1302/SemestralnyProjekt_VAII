@@ -1,13 +1,17 @@
 
 #navbarNavDropdown.collapsing .navbar-nav,
 #navbarNavDropdown.show .navbar-nav {
-    background: #037582;
+    background: #230382;
     padding: 12px;
 }
 
 .obrazokLoga {
     width: 100px;
+}
 
+.dropdown-menuHlavnaStranka{
+    background-color: rgba(34, 24, 168, 0.7);
+    color: white;
 }
 
 body {
@@ -19,21 +23,16 @@ body {
     position: relative;
     height: 100vh;
 }
-
-
 .formPridaniaDoDatabazy{
     width: 30rem;
     margin-top: 18rem;
     position: relative;
     top: -20px;
-    background-color: rgba(30, 9, 169, 0.76);
+    background-color: rgba(22, 37, 134, 0.76);
     padding: 2rem;
     border-radius: 3rem;
     margin-left: -5rem;
 }
-
-
-
 
 .tlacitkoZmenaHesla:hover {
     background-color: rgb(255, 255, 255);
@@ -55,7 +54,6 @@ body {
     margin-left: 2px;
     height: 40px;
     border-radius: 10px;
-
 }
 
 .formPridanie{
@@ -69,13 +67,11 @@ body {
     margin-bottom: 3rem;
     display: flex;
     justify-content: center;
-
 }
 
 .nadpisTabulky{
     font-size: larger;
     margin-bottom: 1rem;
-
 }
 
 .formPridanie{
@@ -98,25 +94,23 @@ body {
     margin-left: 0rem;
 }
 
-.formPridanieChaty{
-    width: 100%;
-    margin-left: 0rem;
-    margin-top: 2rem;
-}
-
 .formPridanieFerraty{
     width: 100%;
     margin-left: 0rem;
-    margin-top: 15rem;
+    margin-top: 17rem;
 }
-
 
 .formPridanieChaty{
-   // width: 100%;
-    //margin-left: 0rem;
-    margin-top: 15rem;
+    width: 100%;
+    margin-left: 0rem;
+    margin-top: 17rem;
 }
 
+.formPridanieVodopady{
+    width: 100%;
+    margin-left: 0rem;
+    margin-top: 17rem;
+}
 
 .textChaty{
     height: 20rem;

@@ -4,6 +4,10 @@
     color: white;
 }
 
+*::selection{
+    background-color: #0e2d3a;
+    color: white;
+}
 
 #mainNavigation a {
     font-family: 'Cabin', sans-serif;

@@ -21,46 +21,11 @@ class ControllerVrchol extends Controller
     public function store(Request $request)
     {
 
-        $validatedData = $request->validate([
-            'nazov_vrcholu' => 'required|max:200',
-            'stat' => 'required|max:200',
-            'okres' => 'required|max:200',
-            'nadmorska_vyska' => 'required|integer',
-            'pohorie' => 'required|max:200',
-            'typ_tury' => 'required|in:horska,oddychova',
-            'narocnost' => 'required|in:lahka,stredna,tazka',
-            'dostupne_v_zime' => 'required|in:ANO,NIE',
-            'dlzka_trasy' => 'required|in:1-5,5-10,10+',
-            'dostupnost' => 'required|in:bez_vodcu,s_vodcom',
-            'obrazok' => 'required|max:200'
-        ],
-            [
-                'nazov_vrcholu.required' => 'Položka názov vrcholu je povinná',
-                'nazov_vrcholu.max' => 'Názov vrcholu môže mať maximálne 200 znakov',
-                'stat.required' => 'Položka Štát je povinná',
-                'stat.max' => 'Štát môže mať maximálne 200 znakov',
-                'okres.required' => 'Položka Okres je povinná',
-                'obrazok.required' => 'Položka Obrazok je povinná',
-                'okres.max' => 'Okres môže mať maximálne 200 znakov',
-                'nadmorska_vyska.required' => 'Položka Nadmorská výška je povinná',
-                'nadmorska_vyska.integer' => 'Nadmorská výška musí byť celé číslo',
-                'pohorie.required' => 'Položka Pohorie je povinná',
-                'pohorie.max' => 'Pohorie môže mať maximálne 200 znakov',
-            ]);
+        $validatedData = $this->validujData($request);
 
         $vrchol = new Vrchol;
 
-        $vrchol->nazov_vrcholu = $validatedData['nazov_vrcholu'];
-        $vrchol->stat = $validatedData['stat'];
-        $vrchol->okres = $validatedData['okres'];
-        $vrchol->nadmorska_vyska = $validatedData['nadmorska_vyska'];
-        $vrchol->pohorie = $validatedData['pohorie'];
-        $vrchol->typ_tury = $validatedData['typ_tury'];
-        $vrchol->narocnost = $validatedData['narocnost'];
-        $vrchol->dostupne_v_zime = $validatedData['dostupne_v_zime'];
-        $vrchol->dlzka_trasy = $validatedData['dlzka_trasy'];
-        $vrchol->dostupnost = $validatedData['dostupnost'];
-        $vrchol->obrazok = $validatedData['obrazok'];
+        $this->nastavAtributy($validatedData, $vrchol);
 
         try {
             $vrchol->save();
@@ -85,7 +50,6 @@ class ControllerVrchol extends Controller
         $vrcholy = Vrchol::all();
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
-
 
     public function ziskanieVrcholovVysokychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Vysoké Tatry')->get();
@@ -134,6 +98,37 @@ class ControllerVrchol extends Controller
     public function ulozEditaciu(Request $request)
     {
 
+        $validatedData = $this->validujData($request);
+
+        $validatedData += $request->validate([
+            'id' => 'required|integer'
+        ]);
+
+
+
+        $vrchol = Vrchol::find($request->id);
+
+        if($vrchol) {
+            $this->nastavAtributy($validatedData, $vrchol);
+
+            try {
+                $vrchol->save();
+                session()->flash('status', 'Príspevok bol editovaný');
+
+            } catch (\Exception $e) {
+                session()->flash('status', 'Nebolo možné upraviť príspevok');
+
+            }
+        }
+        return redirect("/");
+    }
+
+    /**
+     * @param Request $request
+     * @return array
+     */
+    public function validujData(Request $request): array
+    {
         $validatedData = $request->validate([
             'nazov_vrcholu' => 'required|max:200',
             'stat' => 'required|max:200',
@@ -145,8 +140,7 @@ class ControllerVrchol extends Controller
             'dostupne_v_zime' => 'required|in:ANO,NIE',
             'dlzka_trasy' => 'required|in:1-5,5-10,10+',
             'dostupnost' => 'required|in:bez_vodcu,s_vodcom',
-            'obrazok' => 'required|max:200',
-            'id' => 'required|integer'
+            'obrazok' => 'required|max:200'
         ],
             [
                 'nazov_vrcholu.required' => 'Položka názov vrcholu je povinná',
@@ -161,39 +155,26 @@ class ControllerVrchol extends Controller
                 'pohorie.required' => 'Položka Pohorie je povinná',
                 'pohorie.max' => 'Pohorie môže mať maximálne 200 znakov',
             ]);
-
-
-        $vrchol = Vrchol::find($request->id);
-
-        if($vrchol) {
-            $vrchol->nazov_vrcholu = $validatedData['nazov_vrcholu'];
-            $vrchol->stat = $validatedData['stat'];
-            $vrchol->okres = $validatedData['okres'];
-            $vrchol->nadmorska_vyska = $validatedData['nadmorska_vyska'];
-            $vrchol->pohorie = $validatedData['pohorie'];
-            $vrchol->typ_tury = $validatedData['typ_tury'];
-            $vrchol->narocnost = $validatedData['narocnost'];
-            $vrchol->dostupne_v_zime = $validatedData['dostupne_v_zime'];
-            $vrchol->dlzka_trasy = $validatedData['dlzka_trasy'];
-            $vrchol->dostupnost = $validatedData['dostupnost'];
-            $vrchol->obrazok = $validatedData['obrazok'];
-
-            try {
-                $vrchol->save();
-                session()->flash('status', 'Príspevok bol editovaný');
-
-            } catch (\Exception $e) {
-                session()->flash('status', 'Nebolo možné upraviť príspevok');
-
-            }
-        }
-        return redirect("/");
+        return $validatedData;
     }
-    public function addFavouritePost(Request $request, Vrchol $vrchol) {
-        $pouzivatel = Auth::user();
-        $pouzivatel->favouritePosts()->attach($vrchol->id);
 
-        return back();
-
+    /**
+     * @param array $validatedData
+     * @param Vrchol $vrchol
+     * @return void
+     */
+    public function nastavAtributy(array $validatedData, Vrchol $vrchol): void
+    {
+        $vrchol->nazov_vrcholu = $validatedData['nazov_vrcholu'];
+        $vrchol->stat = $validatedData['stat'];
+        $vrchol->okres = $validatedData['okres'];
+        $vrchol->nadmorska_vyska = $validatedData['nadmorska_vyska'];
+        $vrchol->pohorie = $validatedData['pohorie'];
+        $vrchol->typ_tury = $validatedData['typ_tury'];
+        $vrchol->narocnost = $validatedData['narocnost'];
+        $vrchol->dostupne_v_zime = $validatedData['dostupne_v_zime'];
+        $vrchol->dlzka_trasy = $validatedData['dlzka_trasy'];
+        $vrchol->dostupnost = $validatedData['dostupnost'];
+        $vrchol->obrazok = $validatedData['obrazok'];
     }
 }

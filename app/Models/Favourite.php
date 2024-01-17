@@ -12,14 +12,6 @@ class Favourite extends Model
 
     protected $fillable = ['user_id', 'vrchol_id'];
 
-    public function user()
-    {
-        return $this->belongsTo(Pouzivatel::class);
-    }
 
-    public function vrchol()
-    {
-        return $this->belongsTo(Vrchol::class);
-    }
 }
 

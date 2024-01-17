@@ -33,7 +33,6 @@ class ControllerVrchol extends Controller
 
         } catch (\Exception $e) {
             session()->flash('status', 'Nebolo možné príspevok pridať');
-
         }
 
         return redirect("/upravenieDatabazy");
@@ -45,29 +44,43 @@ class ControllerVrchol extends Controller
     }
 
 
-
     public function ziskanieVrcholov() {
         $vrcholy = Vrchol::all();
+        foreach ($vrcholy as $vrchol) {
+            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
+        }
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovVysokychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Vysoké Tatry')->get();
+        foreach ($vrcholy as $vrchol) {
+            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
+        }
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovNizkychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Nízke Tatry')->get();
+        foreach ($vrcholy as $vrchol) {
+            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
+        }
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovVelkejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Veľká Fatra')->get();
+        foreach ($vrcholy as $vrchol) {
+            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
+        }
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovMalejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Malá Fatra')->get();
+        foreach ($vrcholy as $vrchol) {
+            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
+        }
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
@@ -97,14 +110,10 @@ class ControllerVrchol extends Controller
 
     public function ulozEditaciu(Request $request)
     {
-
         $validatedData = $this->validujData($request);
-
         $validatedData += $request->validate([
             'id' => 'required|integer'
         ]);
-
-
 
         $vrchol = Vrchol::find($request->id);
 

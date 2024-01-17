@@ -103,9 +103,9 @@
                             @auth
                                 <button type="submit" class="srdiecko">
                                     @if($vrchol->liked_by_user)
-                                        <i class="bi bi-heart" style="color: #bd1a1a"></i>
+                                        <i class="bi bi-suit-heart-fill" style="color: red"></i>
                                     @else
-                                        <i class="bi bi-heart"></i>
+                                        <i class="bi bi-suit-heart"></i>
                                     @endif
                                 </button>
                             @endauth

@@ -11,9 +11,9 @@ class ControllerChaty extends Controller
     {
         $chaty = Chata::all();
 
-
         return view('hlavne.viewChaty', compact('chaty'));
     }
+
 
 
     public function store(Request $request)

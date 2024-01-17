@@ -17,7 +17,6 @@ class ControllerVrchol extends Controller
         return view('hlavne.viewHlavnaStranka', ['vrcholy' => $vrcholy]);
     }
 
-
     public function store(Request $request)
     {
 
@@ -46,46 +45,34 @@ class ControllerVrchol extends Controller
 
     public function ziskanieVrcholov() {
         $vrcholy = Vrchol::all();
-        foreach ($vrcholy as $vrchol) {
-            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
-        }
+        $this->pridajLiked($vrcholy);
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovVysokychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Vysoké Tatry')->get();
-        foreach ($vrcholy as $vrchol) {
-            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
-        }
+        $this->pridajLiked($vrcholy);
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovNizkychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Nízke Tatry')->get();
-        foreach ($vrcholy as $vrchol) {
-            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
-        }
+        $this->pridajLiked($vrcholy);
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovVelkejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Veľká Fatra')->get();
-        foreach ($vrcholy as $vrchol) {
-            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
-        }
+        $this->pridajLiked($vrcholy);
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovMalejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Malá Fatra')->get();
-        foreach ($vrcholy as $vrchol) {
-            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
-        }
+        $this->pridajLiked($vrcholy);
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
-
-
-
+    
     public function destroy($id)
     {
         $vrchol = Vrchol::find($id);
@@ -185,5 +172,16 @@ class ControllerVrchol extends Controller
         $vrchol->dlzka_trasy = $validatedData['dlzka_trasy'];
         $vrchol->dostupnost = $validatedData['dostupnost'];
         $vrchol->obrazok = $validatedData['obrazok'];
+    }
+
+    /**
+     * @param  $vrcholy
+     * @return void
+     */
+    public function pridajLiked($vrcholy): void
+    {
+        foreach ($vrcholy as $vrchol) {
+            $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
+        }
     }
 }

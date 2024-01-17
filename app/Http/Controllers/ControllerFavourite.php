@@ -8,10 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ControllerFavourite extends Controller
 {
-    public function pridanieOdobranieFavourite(Vrchol $vrchol)
+    public function pridanieOdobranieFavourite( $vrchol_id)
     {
+
+
         $favourite = Favourite::where('user_id', Auth::id())
-            ->where('vrchol_id', $vrchol->id)
+            ->where('vrchol_id', $vrchol_id)
             ->first();
 
         if ($favourite) {
@@ -21,7 +23,7 @@ class ControllerFavourite extends Controller
 
             $favourite = new Favourite;
             $favourite->user_id = Auth::id();
-            $favourite->vrchol_id = $vrchol->id;
+            $favourite->vrchol_id = $vrchol_id;
             $favourite->save();
         }
 

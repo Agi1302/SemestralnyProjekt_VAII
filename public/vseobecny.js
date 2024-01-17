@@ -43,3 +43,32 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.srdiecko').forEach( item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            let button = $(e.target).closest('.srdiecko');
+            let heartIcon = button.find('i');
+            if (heartIcon.hasClass('bi-suit-heart')) {
+                heartIcon.removeClass('bi-suit-heart').addClass('bi-suit-heart-fill').css('color', 'red');
+
+            } else {
+                heartIcon.removeClass('bi-suit-heart-fill').addClass('bi-suit-heart').css('color', '');
+            }
+
+
+            $.ajax({
+                url: item.getAttribute('data-url'),
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+            });
+        });
+    });
+});
+
+

@@ -98,10 +98,10 @@
                 <div class="col-lg-4 mb-4">
                     <div class="karticka">
 
-                        <form method="POST" action="{{ route('favourite.pridanieOdobranieFavourite', $vrchol) }}" class="favourite-form">
+                        <form method="POST"    class="favourite-form">
                             @csrf
                             @auth
-                                <button type="submit" class="srdiecko">
+                                <button type="submit" class="srdiecko" data-url="/favourite/pridanieOdobranieFavourite/{{ $vrchol->id }}">
                                     @if($vrchol->liked_by_user)
                                         <i class="bi bi-suit-heart-fill" style="color: red"></i>
                                     @else
@@ -110,6 +110,8 @@
                                 </button>
                             @endauth
                         </form>
+
+
 
                         <p class="mt-2 kartickaNadpisy">{{$vrchol->nazov_vrchola}}</p>
                         <img src="{{asset('Obrazky/Vrcholy/'.$vrchol->obrazok)}}" class="img-fluid" alt="Popis">

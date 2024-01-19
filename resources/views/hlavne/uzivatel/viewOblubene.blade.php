@@ -5,7 +5,7 @@
 
 @endsection
 
-
+<h2 class="mt-2 nadpisy">Obľúbené</h2>
 
 <div class="row">
 
@@ -22,18 +22,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-white">
+                <a href="/absolvovanePrispevky" class="nav-link text-white">
                     <i class="bi bi-check-circle-fill"></i> Absolvované
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white">
-                    <i class="bi bi-star-fill"></i> Moje hodnotenia
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white">
-                    <i class="bi bi-chat-square-text-fill"></i> Moje komentáre
                 </a>
             </li>
             <li class="nav-item">

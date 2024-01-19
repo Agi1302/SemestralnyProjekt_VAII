@@ -43,5 +43,10 @@ class Pouzivatel extends Authenticatable
         return $this->belongsToMany(Vrchol::class, 'favourites', 'user_id', 'vrchol_id');
     }
 
+    public function absolvovane()
+    {
+        return $this->belongsToMany(Vrchol::class, 'absolvovane', 'user_id', 'vrchol_id');
+    }
+
 }
 

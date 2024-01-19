@@ -121,3 +121,25 @@ option {
     background-color: red;
 }
 
+.fajocka{
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 1.4rem;
+
+    width:  0;
+    height: 0;
+}
+
+.dolnaIkonaPrava{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.dolnaIkonaLava{
+    margin-right: 2rem;
+    margin-left: 1rem;
+
+}
+
+.prazdnyPosun{
+    margin-top: 15rem;
+}

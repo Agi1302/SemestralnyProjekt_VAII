@@ -28,68 +28,10 @@
         </div>
     @endif
 
-
-
-
-
-    <div class="container  filtrovanie">
-
-        <!-- Riadok s filtrami -->
-        <div class="row">
-            <!-- Filter: Typ túry -->
-            <div class="col-xl-2 mb-3">
-                <label for="tourType"></label><select class="form-select filtre" id="tourType">
-                    <option selected>TYP TÚRY</option>
-                    <option value="1">Horská túra</option>
-                    <option value="3">Oddychová túra</option>
-                </select>
-            </div>
-
-            <!-- Filter: Obtiažnosť -->
-            <div class="col-xl-2 mb-3">
-                <label for="difficulty"></label><select class="form-select filtre" id="difficulty">
-                    <option selected>NÁROČNOSŤ</option>
-                    <option value="1">Ľahká</option>
-                    <option value="2">Stredná</option>
-                    <option value="3">Ťažká</option>
-                </select>
-            </div>
-
-            <div class="col-xl-2 mb-3">
-                <label for="season"></label><select class="form-select filtre" id="season">
-                    <option selected>DOSTUPNÉ V ZIME</option>
-                    <option value="ÁNO">ÁNO</option>
-                    <option value="NIE">NIE</option>
-
-                </select>
-            </div>
-
-            <!-- Filter: Dĺžka trasy -->
-            <div class="col-xl-2 mb-3 ">
-                <label for="routeLength"></label><select class="form-select filtre" id="routeLength">
-                    <option selected>DĹŽKA TRASY</option>
-                    <option value="1">Do 5 km</option>
-                    <option value="2">5 - 15 km</option>
-                    <option value="3">Nad 15 km</option>
-                </select>
-            </div>
-
-            <!-- Filter: Dostupnosť -->
-            <div class="col-xl-2 mb-3">
-                <label for="availability"></label><select class="form-select filtre" id="availability">
-                    <option selected>DOSTUPNOSŤ</option>
-                    <option value="1">Bez horského vodcu</option>
-                    <option value="2">S horským vodcom</option>
-                </select>
-            </div>
-            <!-- Tlačidlo na aplikovanie filtrov -->
-            <div class="text-center col-xl-2 mb-3">
-                <button type="button" class="btn btn-primary aplikovatTlac">Aplikovať</button>
-            </div>
-
-        </div>
+    <div class="prazdnyPosun">
 
     </div>
+
 
 
     <div class="container mt-5">
@@ -98,21 +40,6 @@
                 <div class="col-lg-4 mb-4">
                     <div class="karticka">
 
-                        <form method="POST"    class="favourite-form">
-                            @csrf
-                            @auth
-                                <button type="submit" class="srdiecko" data-url="/favourite/pridanieOdobranieFavourite/{{ $vrchol->id }}">
-                                    @if($vrchol->liked_by_user)
-                                        <i class="bi bi-suit-heart-fill" style="color: red"></i>
-                                    @else
-                                        <i class="bi bi-suit-heart"></i>
-                                    @endif
-                                </button>
-                            @endauth
-                        </form>
-
-
-
                         <p class="mt-2 kartickaNadpisy">{{$vrchol->nazov_vrchola}}</p>
                         <img src="{{asset('Obrazky/Vrcholy/'.$vrchol->obrazok)}}" class="img-fluid" alt="Popis">
                         <p class="mt-2">Názov vrcholu: {{ $vrchol->nazov_vrcholu}}</p>
@@ -120,6 +47,36 @@
                         <p class="mt-2">Okres: {{ $vrchol->okres}}</p>
                         <p class="mt-2">Nadmorská výška: {{ $vrchol->nadmorska_vyska}}</p>
                         <p class="mt-2">Pohorie: {{ $vrchol->pohorie}}</p>
+
+                        <div class="d-flex justify-content-end ">
+
+                            <form method="POST"    class="absolvovane-form dolnaIkonaPrava">
+                                @csrf
+                                @auth
+                                    <button type="submit" class="fajocka" data-url="/absolvovane/pridanieOdobranieAbsolvovane/{{ $vrchol->id }}">
+                                        @if($vrchol->done_by_user)
+                                            <i class="bi bi-check2-all" style="color: #0f989d"></i>
+                                        @else
+                                            <i class="bi bi-check2"></i>
+                                        @endif
+                                    </button>
+                                @endauth
+                            </form>
+
+                            <form method="POST"    class="favourite-form dolnaIkonaLava">
+                                @csrf
+                                @auth
+                                    <button type="submit" class="srdiecko" data-url="/favourite/pridanieOdobranieFavourite/{{ $vrchol->id }}">
+                                        @if($vrchol->liked_by_user)
+                                            <i class="bi bi-suit-heart-fill" style="color: #4790e5"></i>
+                                        @else
+                                            <i class="bi bi-suit-heart"></i>
+                                        @endif
+                                    </button>
+                                @endauth
+                            </form>
+
+                        </div>
 
                         @auth
                             @if(Auth::user()->email == "adminadmin@gmail.com")

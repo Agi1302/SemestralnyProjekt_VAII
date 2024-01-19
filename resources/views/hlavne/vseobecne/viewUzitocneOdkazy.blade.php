@@ -44,12 +44,27 @@
                     <p class="card-text">Požičovne lyží: <br>
 
                         <br>INTERSPORT Rent ponúka požičovanie lyží na rôznych miestach na Slovensku.
-                        <br>Crystal Ski ponúka požičovanie lyží a snowboardov.
-                        <br><br><br>Požičovne ferratových setov:<br>
+                        <a href="https://www.intersportrent.com/en">INTERSPORT Rent</a><br>
+                        <br>Crystal Ski ponúka požičovanie lyží a snowboardov.<br>
+                        <a href="https://www.crystalski.sk/">crystalski</a><br>
 
-                        <br>Kofler Sport ponúka požičovanie ferratových setov a iného horolezeckého vybavenia.
-                        <br>Sport Bruno Riffeser ponúka požičovanie ferratových setov, mačiek a ľadových cepov.
-                        <br>Via Ferrata Skalka ponúka požičovanie ferratových setov.</p>
+
+                        <br>Požičovňu lyží nájdete v Bratislave, v Trenčíne a na Kubínskej holi.
+                        V prípade otázok prosím kontaktujte naše zákaznícke centrum na +421 220 924 810
+                        <a href="https://www.najsport.sk/pozicovna-lyzi">NAJŠPORT</a><br>
+
+                        <br>Potrebujete si požičať lyže alebo sa príležitostne chystáte na svah? U nás si lyže
+                        nemusíte kupovať, požičiame Vám ich.
+                        Ohľadom dostupnosti, alebo ďalších podrobnejších informácií prosíme kontaktujte požičovňu
+                        na telefónnom čísle: 052 / 789 40 49, alebo príďte priamo do našej požičovne v predajni v OC
+                        Storeland na Teplickej ceste 5 v Poprade.<br>
+                        <a href="https://www.sportrysy.sk/pozicovne/pozicovna-lyzi/">sportrysy</a>
+
+
+                        <br><br>Požičovne ferratových setov:<br>
+                        <br>Via Ferrata Skalka ponúka požičovanie ferratových setov.
+                        <br><a href="https://www.viaferrataskalka.sk/ferratove-sety/">viaferrataskalka</a>
+
                 </div>
             </div>
         </div>

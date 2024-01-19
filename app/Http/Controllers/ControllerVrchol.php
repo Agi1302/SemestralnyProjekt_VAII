@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Absolvovane;
 use App\Models\Favourite;
 use App\Models\Vrchol;
 use Illuminate\Http\Request;
@@ -46,33 +47,42 @@ class ControllerVrchol extends Controller
     public function ziskanieVrcholov() {
         $vrcholy = Vrchol::all();
         $this->pridajLiked($vrcholy);
+        $this->pridajDone($vrcholy);
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovVysokychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Vysoké Tatry')->get();
         $this->pridajLiked($vrcholy);
+        $this->pridajDone($vrcholy);
+
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovNizkychTatier() {
         $vrcholy = Vrchol::where('pohorie', 'Nízke Tatry')->get();
         $this->pridajLiked($vrcholy);
+        $this->pridajDone($vrcholy);
+
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovVelkejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Veľká Fatra')->get();
         $this->pridajLiked($vrcholy);
+        $this->pridajDone($vrcholy);
+
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
 
     public function ziskanieVrcholovMalejFatry() {
         $vrcholy = Vrchol::where('pohorie', 'Malá Fatra')->get();
         $this->pridajLiked($vrcholy);
+        $this->pridajDone($vrcholy);
+
         return view('hlavne.viewHlavnaStranka', compact('vrcholy'));
     }
-    
+
     public function destroy($id)
     {
         $vrchol = Vrchol::find($id);
@@ -182,6 +192,13 @@ class ControllerVrchol extends Controller
     {
         foreach ($vrcholy as $vrchol) {
             $vrchol->liked_by_user = Favourite::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
+        }
+    }
+
+    public function pridajDone($vrcholy): void
+    {
+        foreach ($vrcholy as $vrchol) {
+            $vrchol->done_by_user = Absolvovane::where('user_id', Auth::id())->where('vrchol_id', $vrchol->id)->exists();
         }
     }
 }

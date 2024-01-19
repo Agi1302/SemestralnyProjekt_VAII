@@ -1,3 +1,13 @@
+window.onscroll = function() {
+    var nav = document.getElementById('mainNavigation');
+    if ( window.pageYOffset > 150 ) {
+        nav.classList.add('hide-nav');
+    } else {
+        nav.classList.remove('hide-nav');
+    }
+};
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('heslo').onkeyup = function () {
@@ -44,21 +54,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
+
     document.querySelectorAll('.srdiecko').forEach( item => {
+
         item.addEventListener('click', function(e) {
             e.preventDefault();
 
             let button = $(e.target).closest('.srdiecko');
             let heartIcon = button.find('i');
-            if (heartIcon.hasClass('bi-suit-heart')) {
-                heartIcon.removeClass('bi-suit-heart').addClass('bi-suit-heart-fill').css('color', 'red');
 
-            } else {
+            if (heartIcon.hasClass('bi-suit-heart'))
+            {
+                heartIcon.removeClass('bi-suit-heart').addClass('bi-suit-heart-fill').css('color', '#4790e5');
+            } else
+            {
                 heartIcon.removeClass('bi-suit-heart-fill').addClass('bi-suit-heart').css('color', '');
             }
-
 
             $.ajax({
                 url: item.getAttribute('data-url'),
@@ -70,5 +82,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelectorAll('.fajocka').forEach( item => {
+
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            let button = $(e.target).closest('.fajocka');
+            let heartIcon = button.find('i');
+
+            if (heartIcon.hasClass('bi bi-check2'))
+            {
+                heartIcon.removeClass('bi bi-check2').addClass('bi bi-check2-all').css('color', '#0f989d');
+            } else
+            {
+                heartIcon.removeClass('bi bi-check2-all').addClass('bi bi-check2').css('color', '');
+            }
+
+            $.ajax({
+                url: item.getAttribute('data-url'),
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+            });
+        });
+    });
+});
+
 
 

@@ -79,3 +79,7 @@ a.dropdown-item:hover {
     text-align: center;
     padding-top: 8rem;
 }
+
+.hide-nav {
+    display: none;
+}

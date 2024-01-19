@@ -21,21 +21,24 @@
                         <div>
                             <p class="posunTextu">{{$otazka->user->meno}} : {{$otazka->textOtazky}} </p>
 
-                            @if(Auth::user()->email != "adminadmin@gmail.com")
-                                <p class="posunTextu">ADMIN:{{$otazka->textOdpovede}}</p>
+
+                            @if(!Auth::check() || Auth::user()->email != "adminadmin@gmail.com")
+                                <p class="posunTextu">ADMIN: {{ $otazka->textOdpovede}}</p>
                             @endif
                         </div>
                     </div>
 
                     <div>
-                        @if(Auth::user()->email == "adminadmin@gmail.com")
-                            <form name="prihlasenie" id="prihlasenie" method="POST" action="/editujOtazku/{{$otazka->id}}" class="col-xs-12 col-sm-12 col-md-12 formular">
-                                @csrf
-                                <label for="textOdpovede"></label>
-                                <textarea class="textOdpovede" id="textOdpovede" name="textOdpovede" required>{{$otazka->textOdpovede}}</textarea>
-                                <button type="submit" class="btn btn-success buttonPotvrdenieOdpovede">PRIDAŤ ODPOVEĎ</button>
-                            </form>
-                        @endif
+                        @auth
+                            @if(Auth::user()->email == "adminadmin@gmail.com")
+                                <form name="prihlasenie" id="prihlasenie" method="POST" action="/editujOtazku/{{$otazka->id}}" class="col-xs-12 col-sm-12 col-md-12 formular">
+                                    @csrf
+                                    <label for="textOdpovede"></label>
+                                    <textarea class="textOdpovede" id="textOdpovede" name="textOdpovede" required>{{$otazka->textOdpovede}}</textarea>
+                                    <button type="submit" class="btn btn-success buttonPotvrdenieOdpovede">PRIDAŤ ODPOVEĎ</button>
+                                </form>
+                            @endif
+                        @endauth
                     </div>
                 </div>
             @endforeach
@@ -56,20 +59,13 @@
                             <label for="textOtazky"></label><textarea class="form-control " id="textOtazky" placeholder="Zadajte text otazky" name="textOtazky" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-success buttonPotvrdenie">PRIDAŤ OTÁZKU>
+                        <button type="submit" class="btn btn-success buttonPotvrdenie">PRIDAŤ OTÁZKU
                             <i class="glyphicon glyphicon-send buttonPotvrdenie"></i>
                         </button>
                     </form>
                 </div>
             </div>
             @endif
-
-
-
-
-
-
-
         @endauth
 </div>
 @endsection

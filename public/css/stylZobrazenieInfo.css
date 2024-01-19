@@ -79,7 +79,7 @@ body {
     background-color: rgba(0, 0, 0, 0.37);
     border-radius: 10px;
     padding: 20px; /* vnútorný okraj */
-    margin: 10rem 0 -10rem 0; /* vonkajší okraj */
+    margin: 5rem 0 -10rem 0; /* vonkajší okraj */
 
     min-height: 400px;
     display: flex;
@@ -87,3 +87,7 @@ body {
     justify-content: space-between;
 }
 
+.nadpisy{
+    text-align: center;
+    padding-top: 8rem;
+}

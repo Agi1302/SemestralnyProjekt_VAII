@@ -130,6 +130,9 @@ Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 
 //oblubene prispevky
 Route::post('/favourite/pridanieOdobranieFavourite/{vrchol_id}', [ControllerFavouriteAlias::class, 'pridanieOdobranieFavourite'])->name('favourite.pridanieOdobranieFavourite');
+Route::post('/absolvovane/pridanieOdobranieAbsolvovane/{vrchol_id}', [\App\Http\Controllers\ControllerAbsolvovane::class, 'pridanieOdobranieAbsolvovane'])->name('absolvovane.pridanieOdobranieAbsolvovane');
+
 Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorites"]);
+Route::get('/absolvovanePrispevky', [\App\Http\Controllers\ControllerAbsolvovane::class, "showAbsolvovane"]);
 
 

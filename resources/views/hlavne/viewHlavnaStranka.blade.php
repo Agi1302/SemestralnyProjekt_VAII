@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/stylHlavnaStranka.css') }}">
 
     @if(session('status'))
-        <div class="alert alert-success">
+        <div class="alert alert-success chyboveHlasenia">
             {{ session('status') }}
         </div>
     @endif
@@ -55,7 +55,7 @@
                                 @auth
                                     <button type="submit" class="fajocka" data-url="/absolvovane/pridanieOdobranieAbsolvovane/{{ $vrchol->id }}">
                                         @if($vrchol->done_by_user)
-                                            <i class="bi bi-check2-all" style="color: #0f989d"></i>
+                                            <i class="bi bi-check2-all" style="color: #4790e5"></i>
                                         @else
                                             <i class="bi bi-check2"></i>
                                         @endif
@@ -79,7 +79,7 @@
                         </div>
 
                         @auth
-                            @if(Auth::user()->email == "adminadmin@gmail.com")
+                            @if(Auth::user()->is_admin())
                                 <div class="row">
                                     <div class="col-lg-6 mb-6">
                                         <form method="POST" action="/vrchol/{{ $vrchol->id }}">

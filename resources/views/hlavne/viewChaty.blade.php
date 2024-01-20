@@ -36,7 +36,7 @@
                     </div>
 
                     @auth
-                        @if(Auth::user()->email == "adminadmin@gmail.com")
+                        @if(Auth::user()->is_admin())
                             <div class="row">
                                 <div class="col-lg-6 mb-6">
                                     <form method="POST" action="/chata/{{ $chata->id }}">

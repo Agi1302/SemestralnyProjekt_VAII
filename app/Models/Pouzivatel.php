@@ -15,7 +15,8 @@ class Pouzivatel extends Authenticatable
         'meno',
         'priezvisko',
         'email',
-        'heslo'
+        'heslo',
+        'id_role'
     ];
 
     protected $hidden = [
@@ -46,6 +47,10 @@ class Pouzivatel extends Authenticatable
     public function absolvovane()
     {
         return $this->belongsToMany(Vrchol::class, 'absolvovane', 'user_id', 'vrchol_id');
+    }
+
+    public function is_admin():bool {
+        return $this->id_role == 1;
     }
 
 }

@@ -51,32 +51,23 @@
 
         <!-- Formulár -->
         <div class="col-lg-10 pravyStlpecImg">
-            <form class="formOpravnyFormular">
+            <form class="formOpravnyFormular" method="POST" action="{{ route('update-user') }}">
+                @csrf
                 <div class="form-group">
                     <label for="firstName">Meno:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder={{ Auth::user()->meno }}>
+                    <input type="text" class="form-control" id="firstName" name="meno" value={{ Auth::user()->meno }}>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Priezvisko:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder={{ Auth::user()->priezvisko }}>
+                    <input type="text" class="form-control" id="lastName" name="priezvisko" value={{ Auth::user()->priezvisko }}>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder={{ Auth::user()->email }}>
+                    <input type="email" class="form-control" id="email" name="email" value={{ Auth::user()->email }}>
                 </div>
 
-
-                <button class="nav-item tlacitkoZmenaHesla">
-                    <a href="#" class="nav-link text-white">
-                        <i></i> Uložiť zmenené údaje
-                    </a>
-                </button>
-
-
-                <button class="nav-item tlacitkoZmenaHesla">
-                    <a href="/zmenaHesla" class="nav-link text-white">
-                        <i class="bi bi-key-fill"></i> Zmena hesla
-                    </a>
+                <button type="submit" class="nav-item tlacitkoZmenaHesla">
+                    Uložiť zmenené údaje
                 </button>
             </form>
         </div>

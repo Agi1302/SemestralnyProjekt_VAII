@@ -5,19 +5,15 @@
 
 @endsection
 
-
-
-
 <div class="container">
     <div class="row">
-        <!-- Navigačný panel -->
+
         <div class="col-lg-2 stlpecSTextom">
             <div>
                 <div class="p-3 text-white navigacnyPanelInfo2" style="position: sticky; top: 180px; height: 50vh; width: 30vh; overflow-y: auto;">
 
                     <h3 class="mb-3 nadpisMojUcet">Môj účet</h3>
 
-                    <!-- Položky menu -->
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
                             <a href="/oblubenePrispevky" class="nav-link text-white">
@@ -51,27 +47,27 @@
 
         <!-- Formulár -->
         <div class="col-lg-10 pravyStlpecImg">
-            <form class="formOpravnyFormular">
+            <form class="formOpravnyFormular" method="POST" action="{{ route('update-password') }}">
+                @csrf
+
                 <div class="form-group">
-                    <label for="firstName">Zadajte staré heslo:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Zadajte nové heslo:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="email">Potvdenie nového hesla:</label>
-                    <input type="email" class="form-control" id="email" placeholder="">
+                    <label for="old_password">Zadajte staré heslo:</label>
+                    <input type="password" class="form-control" id="old_password" placeholder="Zadajte heslo *" name="old_password" required>
                 </div>
 
+                <div class="form-group">
+                    <label for="new_password">Zadajte nové heslo:</label>
+                    <input type="password" class="form-control" id="new_password" placeholder="Zadajte heslo *" name="new_password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new_password_confirmation">Potvdenie nového hesla:</label>
+                    <input type="password" class="form-control" id="new_password_confirmation" placeholder="Potvrdenie hesla *" name="new_password_confirmation" required>
+                </div>
                 <button class="nav-item tlacitkoZmenaHesla">
-                    <a href="#" class="nav-link text-white">
-                        <i></i> Potvrdenie zmeny hesla
-                    </a>
+                    <i></i> Potvrdenie zmeny hesla
                 </button>
-
             </form>
+
         </div>
     </div>
 </div>

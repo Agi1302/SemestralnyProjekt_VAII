@@ -8,7 +8,8 @@
 
 <div class="d-flex flex-column min-vh-100">
     <div class="p-3 text-white navigacnyPanelInfo" style="position: sticky; top: 180px; height: 50vh; width: 30vh; overflow-y: auto;">
-        <!-- Logo alebo názov stránky -->
+
+
         <h3 class="mb-3 nadpisMojUcet">Môj účet</h3>
 
         <!-- Položky menu -->

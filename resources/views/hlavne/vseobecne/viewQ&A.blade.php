@@ -30,7 +30,7 @@
 
                     <div>
                         @auth
-                            @if(Auth::user()->email == "adminadmin@gmail.com")
+                            @if(Auth::user()->is_admin())
                                 <form name="prihlasenie" id="prihlasenie" method="POST" action="/editujOtazku/{{$otazka->id}}" class="col-xs-12 col-sm-12 col-md-12 formular">
                                     @csrf
                                     <label for="textOdpovede"></label>

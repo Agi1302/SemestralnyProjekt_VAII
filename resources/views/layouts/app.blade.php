@@ -91,7 +91,7 @@
                         <ul class="dropdown-menu dropdown-menuHlavnaStranka " aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="/oblubenePrispevky">Profilové údaje</a></li>
 
-                            @if(Auth::check() && Auth::user()->meno == 'admin')
+                            @if(Auth::check() && Auth::user()->is_admin())
                                 <li><a class="dropdown-item" href="/upravenieDatabazy">Pridaj príspevok</a></li>
                             @endif
 

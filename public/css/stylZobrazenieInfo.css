@@ -91,3 +91,10 @@ body {
     text-align: center;
     padding-top: 8rem;
 }
+.alert {
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #62040b;
+}

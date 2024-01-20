@@ -122,6 +122,9 @@ Route::get('/vrcholyMalaFatra', [ControllerVrchol::class, "ziskanieVrcholovMalej
 
 //prihlasovacie vecicky
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
+
+Route::post('/update-password', [ControllerRegistracia::class, 'updatePassword'])->name('update-password');
+Route::post('/update-user', [ControllerRegistracia::class, 'updateUser'])->name('update-user');
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 

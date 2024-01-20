@@ -23,12 +23,11 @@
                         <div class="col-lg-7 stlpecSTextom kartickaVodopad">
                             <div>
                                 <h2 class="mt-2 nadpisVodopadyKarticky">{{$vodopad->nazov}}</h2>
-
                                 <p> {{$vodopad->text}}</p>
                             </div>
 
                             @auth
-                                @if(Auth::user()->email == "adminadmin@gmail.com")
+                                @if(Auth::user()->is_admin())
                                     <div class="row">
                                         <div class="col-lg-6 mb-6">
                                             <form method="POST" action="/vodopad/{{ $vodopad->id }}">
@@ -44,11 +43,8 @@
                                     </div>
                                 @endif
                             @endauth
-
                         </div>
                     </div>
-
-
                 @endif
 
                 @if($index % 2 == 1)
@@ -61,7 +57,7 @@
                             </div>
 
                             @auth
-                                @if(Auth::user()->email == "adminadmin@gmail.com")
+                                @if(Auth::user()->is_admin())
                                     <div class="row">
                                         <div class="col-lg-6 mb-6">
                                             <form method="POST" action="/vodopad/{{ $vodopad->id }}">
@@ -77,17 +73,11 @@
                                     </div>
                                 @endif
                             @endauth
-
-
                         </div>
-
                         <div class="col-lg-5 ">
                             <img src="{{asset($vodopad->obrazok)}}" class="img-fluid obrazokFerraty pravyObrazok" alt="Popis">
                         </div>
                     </div>
-
-
-
                 @endif
             </div>
         @endforeach

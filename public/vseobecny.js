@@ -1,6 +1,6 @@
 window.onscroll = function() {
     var nav = document.getElementById('mainNavigation');
-    if ( window.pageYOffset > 150 ) {
+    if ( window.pageYOffset > 150) {
         nav.classList.add('hide-nav');
     } else {
         nav.classList.remove('hide-nav');
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (heartIcon.hasClass('bi bi-check2'))
             {
-                heartIcon.removeClass('bi bi-check2').addClass('bi bi-check2-all').css('color', '#0f989d');
+                heartIcon.removeClass('bi bi-check2').addClass('bi bi-check2-all').css('color', '#4790e5');
             } else
             {
                 heartIcon.removeClass('bi bi-check2-all').addClass('bi bi-check2').css('color', '');

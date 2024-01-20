@@ -11,7 +11,8 @@
 
     <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 text-white navigacnyPanelInfo" style="position: fixed; top: 180px; height: 50vh; overflow-y: auto; z-index: 1;">
-            <!-- Logo alebo názov stránky -->
+
+
             <h3 class="nadpisMojUcet">Môj účet</h3>
 
         <!-- Položky menu -->

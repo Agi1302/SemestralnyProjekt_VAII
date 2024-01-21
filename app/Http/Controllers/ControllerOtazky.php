@@ -16,7 +16,7 @@ class ControllerOtazky extends Controller
 
     public function store(Request $request)
     {
-        if (!Auth::check()) {
+        if (!\Auth::check()) {
             return redirect('/')->with('status', "Musíš byť prihlásený!");
         }
 

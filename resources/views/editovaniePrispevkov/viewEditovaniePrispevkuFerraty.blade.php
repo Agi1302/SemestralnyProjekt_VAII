@@ -11,7 +11,6 @@
          <label class="nadpisTabulky">PRIDANIE PRÍSPEVKU FERRATY</label>
          <div class="row">
              <div class="col-12 col-md-6">
-                 <!-- Prvý stĺpec -->
                  <div class="form-group">
                      <label for="nazov_ferraty>">Názov ferraty:</label>
                      <input type="text" class="form-control" id="nazov" name="nazov" placeholder='Názov ferraty' value="{{$ferrata->nazov}}">

@@ -12,7 +12,6 @@
         <label class="nadpisTabulky">PRIDANIE PRÍSPEVKU VODOPÁDU</label>
         <div class="row">
             <div class="col-12 col-md-6">
-                <!-- Prvý stĺpec -->
                 <div class="form-group">
                     <label for="nazov_vodopadu>">Názov vodopádu:</label>
                     <label for="nazov"></label><input type="text" class="form-control" id="nazov" name="nazov" placeholder='Názov vodopadu' value="{{$vodopad->nazov}}">

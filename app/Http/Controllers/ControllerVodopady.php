@@ -11,7 +11,6 @@ class ControllerVodopady extends Controller
     {
         $vodopady = Vodopad::all();
 
-
         return view('hlavne.viewVodopady', compact('vodopady'));
     }
 
@@ -59,10 +58,6 @@ class ControllerVodopady extends Controller
     }
 
 
-
-
-
-
     public function ziskanieVodopadov() {
         $vodopady = Vodopad::all();
         return view('hlavne.viewVodopady', compact('vodopady'));
@@ -104,7 +99,6 @@ class ControllerVodopady extends Controller
         if (!\Auth::check() || !\Auth::user()->is_admin()) {
             return redirect('/')->with('status', "Musíš byť prihlásený!");
         }
-
 
         $validatedData = $request->validate([
             'nazov' => 'required|max:200',

@@ -15,7 +15,6 @@
 
             <h3 class="nadpisMojUcet">Môj účet</h3>
 
-        <!-- Položky menu -->
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
                 <a href="/oblubenePrispevky" class="nav-link text-white">

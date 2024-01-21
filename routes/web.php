@@ -92,8 +92,6 @@ Route::get('/Q&A', [ControllerOtazky::class, 'index']);
 Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
 
 //Q&A
-
-
 Route::post('/pridajOtazku', [ControllerOtazky::class, 'store']);
 Route::post('/editujOtazku', [ControllerOtazky::class, 'pridajOdpoved']);
 
@@ -141,7 +139,6 @@ Route::get('/vrcholyMalaFatra', [ControllerVrchol::class, "ziskanieVrcholovMalej
 
 //prihlasovacie vecicky
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
-
 Route::post('/update-password', [ControllerRegistracia::class, 'updatePassword'])->name('update-password');
 Route::post('/update-user', [ControllerRegistracia::class, 'updateUser'])->name('update-user');
 Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);

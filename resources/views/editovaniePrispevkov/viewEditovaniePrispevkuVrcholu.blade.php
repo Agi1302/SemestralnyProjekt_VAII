@@ -11,7 +11,6 @@
             <label class="nadpisTabulky">EDITOVANIE PRÍSPEVKU VRCHOLU</label>
             <div class="row">
                 <div class="col-lg-6">
-                    <!-- Prvý stĺpec -->
                     <div class="form-group">
                         <label for="nazov_vrcholu">Názov vrcholu:</label>
                         <input type="text" class="form-control" id="nazov_vrcholu" name="nazov_vrcholu" placeholder='vrchol názov' value="{{ $vrchol->nazov_vrcholu}}">

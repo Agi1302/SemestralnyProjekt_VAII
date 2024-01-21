@@ -120,7 +120,7 @@
 </div>
 
 <div class="content">
-    @yield('content') {{-- Obsah stránky --}}
+    @yield('content')
 </div>
 
 

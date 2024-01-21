@@ -10,13 +10,11 @@
 
 <div class="container">
     <div class="row">
-        <!-- Navigačný panel -->
         <div class="col-lg-2 stlpecSTextom">
             <div>
                 <div class="p-3 text-white navigacnyPanelInfo2" style="position: sticky; top: 180px; height: 50vh; width: 30vh; overflow-y: auto;">
                     <h3 class="mb-3 nadpisMojUcet">Môj účet</h3>
 
-                    <!-- Položky menu -->
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
                             <a href="/oblubenePrispevky" class="nav-link text-white">
@@ -49,7 +47,6 @@
             </div>
         </div>
 
-        <!-- Formulár -->
         <div class="col-lg-10 pravyStlpecImg">
             <form class="formOpravnyFormular" method="POST" action="{{ route('update-user') }}">
                 @csrf

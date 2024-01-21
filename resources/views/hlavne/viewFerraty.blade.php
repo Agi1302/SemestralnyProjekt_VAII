@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="{{ asset('css/stylFerraty.css') }}">
 
 
-<!-- Popis ferrat-->
 
 <h2 class="mt-2 nadpisy">Ferraty</h2>
 

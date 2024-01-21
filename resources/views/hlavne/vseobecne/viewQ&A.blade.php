@@ -22,7 +22,7 @@
                             <p class="posunTextu">{{$otazka->user->meno}} : {{$otazka->textOtazky}} </p>
 
 
-                            @if(!Auth::check() || Auth::user()->email != "adminadmin@gmail.com")
+                            @if(!Auth::check() || !Auth::user()->is_admin())
                                 <p class="posunTextu">ADMIN: {{ $otazka->textOdpovede}}</p>
                             @endif
                         </div>
@@ -31,12 +31,11 @@
                     <div>
                         @auth
                             @if(Auth::user()->is_admin())
-                                <form name="prihlasenie" id="prihlasenie" method="POST" action="/editujOtazku/{{$otazka->id}}" class="col-xs-12 col-sm-12 col-md-12 formular">
-                                    @csrf
+                                <div class="col-xs-12 col-sm-12 col-md-12 formular pridanieOdpovedeAjax">
                                     <label for="textOdpovede"></label>
                                     <textarea class="textOdpovede" id="textOdpovede" name="textOdpovede" required>{{$otazka->textOdpovede}}</textarea>
-                                    <button type="submit" class="btn btn-success buttonPotvrdenieOdpovede">PRIDAŤ ODPOVEĎ</button>
-                                </form>
+                                    <a class="btn btn-success buttonPotvrdenieOdpovede" data-id="{{$otazka->id}}" onclick="pridajOdpovedAjax(this)">PRIDAŤ ODPOVEĎ</a>
+                                </div>
                             @endif
                         @endauth
                     </div>
@@ -47,7 +46,7 @@
         </div>
 
         @auth
-            @if(Auth::user()->email != "adminadmin@gmail.com")
+            @if(!Auth::user()->is_admin())
             <div class="col-md-4 fixed-md order-1 order-md-2 ">
                 <div class="otazkoveOkno">
                     <form class="vnutorneOknoFormu" name="prihlasenie" id="prihlasenie" method="post"  method="POST" action="/pridajOtazku" class="col-xs-12 col-sm-12 col-md-12 formular">

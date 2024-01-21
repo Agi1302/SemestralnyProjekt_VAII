@@ -19,6 +19,10 @@ class ControllerVodopady extends Controller
     public function store(Request $request)
     {
 
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $validatedData = $request->validate([
             'nazov' => 'required|max:200',
             'text' => 'required|max:1000',
@@ -67,6 +71,10 @@ class ControllerVodopady extends Controller
 
     public function destroy($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $vodopad = Vodopad::find($id);
 
         if ($vodopad) {
@@ -83,12 +91,20 @@ class ControllerVodopady extends Controller
 
     public function editacia($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $vodopad = Vodopad::find($id);
         return view('editovaniePrispevkov.viewEditovaniePrispevkuVodopadu', compact('vodopad'));
     }
 
     public function ulozEditaciu(Request $request)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
 
         $validatedData = $request->validate([
             'nazov' => 'required|max:200',

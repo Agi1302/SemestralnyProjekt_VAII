@@ -16,6 +16,10 @@ class ControllerOtazky extends Controller
 
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $validatedData = $request->validate([
             'idPouzivatela' => 'required|max:200',
             'textOtazky' => 'required|max:5000',
@@ -51,16 +55,21 @@ class ControllerOtazky extends Controller
         return view('hlavne.vseobecne.viewQ&A', ['otazky' => $otazky]);
     }
 
-    public function pridajOdpoved(Request $request, $id)
+    public function pridajOdpoved(Request $request)
     {
-        $otazka = Otazka::findOrFail($id);
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
 
         $validatedData = $request->validate([
-            'textOdpovede' => 'max:5000',
+            'textOdpovede' => 'required|max:5000',
+            'id' => 'required|exists:table_otazky,id',
         ],
             [
                 'textOdpovede.max' => 'Položka textOpovede je povinná, maximalny pocet prekroceny',
             ]);
+
+        $otazka = Otazka::findOrFail($validatedData['id']);
         $otazka->textOdpovede = $validatedData['textOdpovede'];
         $otazka->save();
         return redirect("/Q&A");

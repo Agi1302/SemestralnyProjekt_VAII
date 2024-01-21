@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControllerAbsolvovane;
 use App\Http\Controllers\ControllerChaty;
 use App\Http\Controllers\ControllerFavourite as ControllerFavouriteAlias;
 use App\Http\Controllers\ControllerFerraty;
@@ -28,10 +29,6 @@ Route::get('/chaty', function () {
     return view('hlavne.viewChaty');
 });
 
-Route::get('/forum', function () {
-    return view('hlavne.vseobecne.viewForum');
-});
-
 Route::get('/prihlasenie', function () {
     return view('hlavne.viewPrihlasenie');
 });
@@ -45,19 +42,39 @@ Route::get('/vodopady', function () {
 });
 
 Route::get('/zobrazenieProfilovychUdajov', function () {
-    return view('hlavne.uzivatel.viewProfiloveUdaje');
+
+    if(Auth::check()){
+        return view('hlavne.uzivatel.viewProfiloveUdaje');
+    }
+    return redirect('/')->with('status', "Najprv sa musíš prihlásiť");
 });
 
 Route::get('/zmenaNastaveni', function () {
-    return view('hlavne.uzivatel.viewProfiloveUdajeNastavenia');
+    if(Auth::check()){
+        return view('hlavne.uzivatel.viewProfiloveUdajeNastavenia');
+    }
+    return redirect('/')->with('status', "Najprv sa musíš prihlásiť");
+
 });
 
 Route::get('/zmenaHesla', function () {
-    return view('hlavne.uzivatel.viewProfiloveUdajeZmenaHesla');
+    if(Auth::check()){
+        return view('hlavne.uzivatel.viewProfiloveUdajeZmenaHesla');
+    }
+    return redirect('/')->with('status', "Najprv sa musíš prihlásiť");
+
 });
 
+
+
 Route::get('/upravenieDatabazy', function () {
-    return view('viewUpravenieDatabazy');
+
+    if(Auth::check() && Auth::user()->is_admin()) {
+        return view('viewUpravenieDatabazy');
+
+    } else {
+        return redirect('/')->with('status', "Najprv sa musíš prihlásiť");
+    }
 });
 
 Route::get('/uzitocneOdkazy', function () {
@@ -70,10 +87,15 @@ Route::get('/Q&A', function () {
 
 Route::get('/Q&A', [ControllerOtazky::class, 'index']);
 
+
+
 Route::get('/favourite/showFavorites', [App\Http\Controllers\ControllerFavourite::class, 'showFavorites'])->name('favourite.showFavorites');
+
 //Q&A
+
+
 Route::post('/pridajOtazku', [ControllerOtazky::class, 'store']);
-Route::post('/editujOtazku/{id}', [ControllerOtazky::class, 'pridajOdpoved']);
+Route::post('/editujOtazku', [ControllerOtazky::class, 'pridajOdpoved']);
 
 
 //pridavanie prispevkov             --CREATE
@@ -117,9 +139,6 @@ Route::get('/vrcholyVelkaFatra', [ControllerVrchol::class, "ziskanieVrcholovVelk
 Route::get('/vrcholyMalaFatra', [ControllerVrchol::class, "ziskanieVrcholovMalejFatry"]);
 
 
-//ziskanie oblubenych prispevkov
-
-
 //prihlasovacie vecicky
 Route::post('/zaregistruj', [ControllerRegistracia::class, 'zaregistruj']);
 
@@ -129,13 +148,11 @@ Route::post('/prihlasenie', [ControllerPrihlasenie::class, 'prihlasenie']);
 Route::get('/odhlasenie', [ControllerPrihlasenie::class, 'odhlasenie']);
 
 
-
-
-//oblubene prispevky
+//oblubene prispevky, ajax-post
 Route::post('/favourite/pridanieOdobranieFavourite/{vrchol_id}', [ControllerFavouriteAlias::class, 'pridanieOdobranieFavourite'])->name('favourite.pridanieOdobranieFavourite');
-Route::post('/absolvovane/pridanieOdobranieAbsolvovane/{vrchol_id}', [\App\Http\Controllers\ControllerAbsolvovane::class, 'pridanieOdobranieAbsolvovane'])->name('absolvovane.pridanieOdobranieAbsolvovane');
+Route::post('/absolvovane/pridanieOdobranieAbsolvovane/{vrchol_id}', [ControllerAbsolvovane::class, 'pridanieOdobranieAbsolvovane'])->name('absolvovane.pridanieOdobranieAbsolvovane');
 
 Route::get('/oblubenePrispevky', [ControllerFavouriteAlias::class, "showFavorites"]);
-Route::get('/absolvovanePrispevky', [\App\Http\Controllers\ControllerAbsolvovane::class, "showAbsolvovane"]);
+Route::get('/absolvovanePrispevky', [ControllerAbsolvovane::class, "showAbsolvovane"]);
 
 

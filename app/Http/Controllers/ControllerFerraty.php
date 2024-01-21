@@ -18,6 +18,9 @@ class ControllerFerraty extends Controller
 
     public function store(Request $request)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
 
         $validatedData = $request->validate([
             'nazov' => 'required|max:200',
@@ -67,9 +70,14 @@ class ControllerFerraty extends Controller
 
     public function destroy($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $ferrata = Ferrata::find($id);
 
         if ($ferrata) {
+
             $ferrata->delete();
 
             session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
@@ -83,12 +91,20 @@ class ControllerFerraty extends Controller
 
     public function editacia($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $ferrata = Ferrata::find($id);
         return view('editovaniePrispevkov.viewEditovaniePrispevkuFerraty', compact('ferrata'));
     }
 
     public function ulozEditaciu(Request $request)
     {
+
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
 
         $validatedData = $request->validate([
             'nazov' => 'required|max:200',

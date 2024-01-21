@@ -19,6 +19,10 @@ class ControllerChaty extends Controller
     public function store(Request $request)
     {
 
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $validatedData = $request->validate([
             'nazov' => 'required|max:200',
             'text' => 'required|max:1000',
@@ -65,28 +69,41 @@ class ControllerChaty extends Controller
 
     public function destroy($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $chata = Chata::find($id);
 
         if ($chata) {
             $chata->delete();
 
             session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
-            return redirect("/viewChaty");
+            return redirect("/chaty");
         } else {
 
             session()->flash('neUspesneZmazaniePrispevku', 'Príspevok sa nepodarilo odstrániť');
-            return redirect("/viewChaty");
+            return redirect("/chaty");
         }
     }
 
     public function editacia($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $chata = Chata::find($id);
         return view('editovaniePrispevkov.viewEditovaniePrispevkuChaty', compact('chata'));
     }
 
     public function ulozEditaciu(Request $request)
     {
+
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
 
         $validatedData = $request->validate([
             'nazov' => 'required|max:200',

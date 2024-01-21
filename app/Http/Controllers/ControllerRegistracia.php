@@ -29,6 +29,11 @@ class ControllerRegistracia extends Controller
 
     public function updatePassword(Request $request)
     {
+
+        if (!\Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $request->validate([
             'old_password' => 'required',
             'new_password' => 'required|confirmed|min:8',
@@ -47,6 +52,11 @@ class ControllerRegistracia extends Controller
 
     public function updateUser(Request $request)
     {
+
+        if (!\Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $user = Auth::user();
         $user->meno = $request->get('meno');
         $user->priezvisko = $request->get('priezvisko');

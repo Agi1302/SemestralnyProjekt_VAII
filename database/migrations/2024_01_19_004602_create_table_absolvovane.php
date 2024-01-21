@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('absolvovane', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('pouzivatelia')->onDelete('cascade');
-            $table->foreignId('vrchol_id')->constrained('vrcholy')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('vrchol_id');
+            $table->foreign('user_id')->references('id')->on('pouzivatelia');
+            $table->foreign('vrchol_id')->references('id')->on('vrcholy');
             $table->timestamps();
+            $table->primary(['user_id', 'vrchol_id']); //kompozitny PK
         });
     }
 

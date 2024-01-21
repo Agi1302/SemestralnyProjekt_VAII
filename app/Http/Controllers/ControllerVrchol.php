@@ -20,6 +20,9 @@ class ControllerVrchol extends Controller
 
     public function store(Request $request)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
 
         $validatedData = $this->validujData($request);
 
@@ -85,9 +88,17 @@ class ControllerVrchol extends Controller
 
     public function destroy($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $vrchol = Vrchol::find($id);
 
         if ($vrchol) {
+
+            Favourite::where('vrchol_id', $vrchol->id)->delete();
+            Absolvovane::where('vrchol_id', $vrchol->id)->delete();
+
             $vrchol->delete();
 
             session()->flash('uspesneZmazaniePrispevku', 'Príspevok bol úspešne odstránený');
@@ -101,12 +112,19 @@ class ControllerVrchol extends Controller
 
     public function editacia($id)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
         $vrchol = Vrchol::find($id);
         return view('editovaniePrispevkov.viewEditovaniePrispevkuVrcholu', compact('vrchol'));
     }
 
     public function ulozEditaciu(Request $request)
     {
+        if (!\Auth::check() || !\Auth::user()->is_admin()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $validatedData = $this->validujData($request);
         $validatedData += $request->validate([
             'id' => 'required|integer'

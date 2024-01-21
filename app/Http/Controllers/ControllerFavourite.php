@@ -10,7 +10,9 @@ class ControllerFavourite extends Controller
 {
     public function pridanieOdobranieFavourite( $vrchol_id)
     {
-
+        if (!\Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
 
         $favourite = Favourite::where('user_id', Auth::id())
             ->where('vrchol_id', $vrchol_id)
@@ -33,6 +35,10 @@ class ControllerFavourite extends Controller
 
     public function showFavorites()
     {
+        if (!\Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $user = Auth::user();
         $favourites = $user->favourites;
 

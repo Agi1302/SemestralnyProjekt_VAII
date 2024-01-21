@@ -17,6 +17,8 @@ return new class extends Migration
             $tabulka->string('priezvisko');
             $tabulka->string('email')->unique();
             $tabulka->string('heslo');
+            $tabulka->unsignedBigInteger('id_role')->default(2);
+            $tabulka->foreign('id_role')->references('id')->on('table_role');
             $tabulka->rememberToken();
             $tabulka->timestamps();
         });

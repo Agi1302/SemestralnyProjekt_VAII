@@ -30,6 +30,11 @@ class ControllerPrihlasenie extends Controller
     }
 
     public function odhlasenie() {
+
+        if (!\Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         Auth::logout();
         return redirect('/');
     }

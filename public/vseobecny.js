@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {  //po nacitani stranky
 
     document.querySelectorAll('.srdiecko').forEach( item => {
 
@@ -112,5 +112,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function pridajOdpovedAjax(element) {
+
+    var idOtazky = $(element).attr('data-id');
+    var textAreaElement = element.previousElementSibling;
+    var textOdpovede= textAreaElement.value;
+
+    var data = new FormData();
+    console.log('1');
+    data.append('id', idOtazky);
+    console.log('2');
+
+    data.append('textOdpovede', textOdpovede);
+    $.ajax({
+        url: '/editujOtazku',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: data,
+        processData: false,
+        contentType: false,
+
+        success: function (response){
+            alert("Zmena prebehla");
+        }
+
+    });
+    console.log('3');
+
+}
 
 

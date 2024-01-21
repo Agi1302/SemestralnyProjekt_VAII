@@ -10,6 +10,10 @@ class ControllerAbsolvovane
     public function pridanieOdobranieAbsolvovane( $vrchol_id)
     {
 
+        if (!\Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
 
         $absolvovane = Absolvovane::where('user_id', Auth::id())
             ->where('vrchol_id', $vrchol_id)
@@ -32,6 +36,11 @@ class ControllerAbsolvovane
 
     public function showAbsolvovane()
     {
+
+        if (!\Auth::check()) {
+            return redirect('/')->with('status', "Musíš byť prihlásený!");
+        }
+
         $user = Auth::user();
         $absolvovane = $user->absolvovane;
 
